@@ -26,6 +26,14 @@ gem "stimulus-rails", ">= 0.4.0"
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
 
+# Access environment variables. Also includes presence validation,
+# type coercion and default values.
+gem "env_vars"
+
+gem "dotenv"
+
+gem "rails-env"
+
 group :development, :test do
   gem "pry-meta"
 end
