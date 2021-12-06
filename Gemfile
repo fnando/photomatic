@@ -34,6 +34,14 @@ gem "dotenv"
 
 gem "rails-env"
 
+gem "human_routes"
+
+gem "attr_keyring"
+
+gem "ar-uuid"
+
+gem "signal"
+
 group :development, :test do
   gem "pry-meta"
 end

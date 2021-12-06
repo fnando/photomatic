@@ -1,7 +1,9 @@
 ---
 development:
-  DATABASE_URL: postgres:///35mm_dev
+  adapter: postgresql
+  name: 35mm_dev
 test:
-  DATABASE_URL: postgres:///35mm_test
+  adapter: postgresql
+  name: 35mm_test
 production:
   DATABASE_URL: <%= ThirtyFiveMm::Config.database_url %>
