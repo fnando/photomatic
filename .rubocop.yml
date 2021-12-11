@@ -5,3 +5,6 @@ inherit_gem:
 AllCops:
   TargetRubyVersion: 3.0
   TargetRailsVersion: 7.0
+
+Metrics:
+  Enabled: false

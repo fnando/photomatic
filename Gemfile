@@ -28,19 +28,19 @@ gem "stimulus-rails", ">= 0.4.0"
 
 # Access environment variables. Also includes presence validation,
 # type coercion and default values.
-gem "env_vars"
+gem "superconfig"
 
-gem "dotenv"
-
-gem "rails-env"
-
-gem "human_routes"
-
-gem "attr_keyring"
-
+gem "ar-bigint"
+gem "ar-timestamptz"
 gem "ar-uuid"
-
+gem "attr_keyring"
+gem "defaults"
+gem "dotenv"
+gem "haikunate"
+gem "human_routes"
+gem "rails-env"
 gem "signal"
+gem "url_signature"
 
 group :development, :test do
   gem "pry-meta"

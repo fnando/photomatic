@@ -6,4 +6,4 @@ test:
   adapter: postgresql
   name: 35mm_test
 production:
-  DATABASE_URL: <%= ThirtyFiveMm::Config.database_url %>
+  DATABASE_URL: <%= Lens::Config.database_url %>

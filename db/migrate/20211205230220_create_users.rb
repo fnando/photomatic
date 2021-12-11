@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration[7.0]
     enable_extension "pgcrypto"
 
     create_table :users do |t|
-      t.jsonb :email, null: false
+      t.text :email, null: false
 
       t.timestamps
     end
