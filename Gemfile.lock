@@ -64,6 +64,8 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     ar-bigint (0.2.0)
       activerecord
+    ar-check (0.2.2)
+      activerecord
     ar-timestamptz (0.2.0)
       activerecord
     ar-uuid (0.2.2)
@@ -198,7 +200,10 @@ GEM
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
-    signal (1.2.0)
+    signal (1.3.0)
+    simple_auth (3.1.3)
+      globalid
+      rails
     slop (3.6.0)
     stimulus-rails (1.0.2)
       railties (>= 6.0.0)
@@ -227,6 +232,7 @@ PLATFORMS
 
 DEPENDENCIES
   ar-bigint
+  ar-check
   ar-timestamptz
   ar-uuid
   attr_keyring
@@ -248,6 +254,7 @@ DEPENDENCIES
   rubocop-rails
   selenium-webdriver
   signal
+  simple_auth
   stimulus-rails (>= 0.4.0)
   superconfig
   turbo-rails (>= 0.7.11)

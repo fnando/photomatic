@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
+
 require "fileutils"
 
 # path to your application root.
@@ -12,6 +14,11 @@ FileUtils.chdir APP_ROOT do
   # This script is a way to set up or update your development environment automatically.
   # This script is idempotent, so that you can run it at any time and get an expectable outcome.
   # Add necessary setup steps to this file.
+
+  # This is macOS
+  if RUBY_PLATFORM.include?("darwin")
+    system!("brew bundle install --file Brewfile")
+  end
 
   puts "== Installing dependencies =="
   system! "gem install bundler --conservative"

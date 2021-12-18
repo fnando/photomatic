@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2021_12_11_191606) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "citext"
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
 
@@ -28,6 +29,7 @@ ActiveRecord::Schema.define(version: 2021_12_11_191606) do
   end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.citext "username", null: false
     t.binary "encrypted_email", null: false
     t.text "email_digest", null: false
     t.bigint "keyring_id", null: false
@@ -35,6 +37,7 @@ ActiveRecord::Schema.define(version: 2021_12_11_191606) do
     t.timestamptz "updated_at", null: false
     t.index ["created_at"], name: "index_users_on_created_at"
     t.index ["email_digest"], name: "index_users_on_email_digest", unique: true
+    t.index ["username"], name: "index_users_on_username", unique: true
   end
 
 end

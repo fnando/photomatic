@@ -40,6 +40,7 @@ gem "haikunate"
 gem "human_routes"
 gem "rails-env"
 gem "signal"
+gem "simple_auth"
 gem "url_signature"
 
 group :development, :test do

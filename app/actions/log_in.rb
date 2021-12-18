@@ -12,8 +12,13 @@ class LogIn
   def call
     return emit(:error) unless form.valid?
 
-    # 1. generate login link
-    # 2. send email
-    # 3. emit :success signal
+    login_link = LoginLink.create!(form.email)
+
+    encrypted_email = Encryptor.encrypt(form.email, purpose: :login)
+    encrypted_login_link = Encryptor.encrypt(login_link, purpose: :login)
+
+    AuthMailer.login(encrypted_email, encrypted_login_link).deliver_later
+
+    emit(:success)
   end
 end

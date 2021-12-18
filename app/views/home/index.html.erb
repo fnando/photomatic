@@ -1,1 +1,5 @@
-<%= link_to "Create your account", login_path %>
+<% if user_logged_in? %>
+  <span class="username"><%= current_user.username %></span>
+<% else %>
+  <%= link_to "Create your account", login_path %>
+<% end %>

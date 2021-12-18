@@ -1,3 +1,5 @@
+<%= render "flash_messages" %>
+
 <%= form_for @login_form, url: login_path, as: :login do |f| %>
   <%= f.label :email, "What's your email?" %>
   <%= f.email_field :email %>
