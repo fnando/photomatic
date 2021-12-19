@@ -64,8 +64,6 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     ar-bigint (0.2.0)
       activerecord
-    ar-check (0.2.2)
-      activerecord
     ar-timestamptz (0.2.0)
       activerecord
     ar-uuid (0.2.2)
@@ -159,7 +157,7 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
-    rails-env (2.0.1)
+    rails-env (2.0.2)
     rails-html-sanitizer (1.4.2)
       loofah (~> 2.3)
     railties (7.0.0)
@@ -232,7 +230,6 @@ PLATFORMS
 
 DEPENDENCIES
   ar-bigint
-  ar-check
   ar-timestamptz
   ar-uuid
   attr_keyring
