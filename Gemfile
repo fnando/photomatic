@@ -80,8 +80,8 @@ gem "rails-env"
 
 # A simple observer implementation for POROs (Plain Old Ruby Object) and
 # ActiveRecord objects.
-# [http://github.com/fnando/signal]
-gem "signal"
+# [http://github.com/fnando/voltage]
+gem "voltage"
 
 # A simple authentication system for Rails apps
 # [http://rubygems.org/gems/simple_auth]

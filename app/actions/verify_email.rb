@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class VerifyEmail
-  include Signal.call
+  include Voltage.call
 
   attr_reader :signed_url, :code, :email
 

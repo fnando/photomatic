@@ -198,7 +198,6 @@ GEM
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2)
-    signal (1.3.0)
     simple_auth (3.1.3)
       globalid
       rails
@@ -214,6 +213,7 @@ GEM
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.1.0)
     url_signature (0.0.2)
+    voltage (0.1.0)
     webdrivers (5.0.0)
       nokogiri (~> 1.6)
       rubyzip (>= 1.3.0)
@@ -250,12 +250,12 @@ DEPENDENCIES
   rubocop-performance
   rubocop-rails
   selenium-webdriver
-  signal
   simple_auth
   stimulus-rails (>= 0.4.0)
   superconfig
   turbo-rails (>= 0.7.11)
   url_signature
+  voltage
   webdrivers
 
 RUBY VERSION
