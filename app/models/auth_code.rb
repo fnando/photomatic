@@ -2,12 +2,11 @@
 
 class AuthCode < ApplicationRecord
   defaults code: -> { Haiku.call(variant: -> { SecureRandom.hex(5) }) },
-           expires_at: lambda {
-                         Lens::Config.email_verification_ttl.minutes.from_now
-                       }
+           expires_at:
+            -> { Photomatic::Config.email_verification_ttl.minutes.from_now }
 
-  attr_keyring Lens::Config.auth_code_keyring,
-               digest_salt: Lens::Config.auth_code_digest_salt
+  attr_keyring Photomatic::Config.auth_code_keyring,
+               digest_salt: Photomatic::Config.auth_code_digest_salt
   attr_encrypt :code
 
   def expired?

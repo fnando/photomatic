@@ -2,8 +2,8 @@
 
 Rails.env.on(:development, :production) do
   Rails.application.routes.default_url_options = {
-    host: Lens::Config.app_host,
-    protocol: Lens::Config.force_ssl? ? :https : :http
+    host: Photomatic::Config.app_host,
+    protocol: Photomatic::Config.force_ssl? ? :https : :http
   }
 
   config.action_mailer.default_url_options =

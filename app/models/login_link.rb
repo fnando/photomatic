@@ -9,13 +9,13 @@ class LoginLink
       email: email
     )
 
-    SignedURL.call(url, key: Lens::Config.signed_url_secret)
+    SignedURL.call(url, key: Photomatic::Config.signed_url_secret)
   end
 
   def self.valid?(signed_url)
     return unless SignedURL.verified?(
       signed_url,
-      key: Lens::Config.signed_url_secret
+      key: Photomatic::Config.signed_url_secret
     )
 
     uri = URI(signed_url)

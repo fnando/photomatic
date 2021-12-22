@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Lens
+module Photomatic
   Config = SuperConfig.new do
     mandatory :database_url, string
     mandatory :tz, string

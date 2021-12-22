@@ -8,4 +8,4 @@ test:
   name: 35mm_test
 
 production:
-  url: <%= Lens::Config.database_url %>
+  url: <%= Photomatic::Config.database_url %>

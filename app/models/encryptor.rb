@@ -3,7 +3,7 @@
 class Encryptor
   def self.encryptor
     ActiveSupport::MessageEncryptor.new(
-      Base64.decode64(Lens::Config.encryptor_secret)
+      Base64.decode64(Photomatic::Config.encryptor_secret)
     )
   end
 
