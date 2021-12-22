@@ -18,10 +18,18 @@ gem "pg", "~> 1.1"
 # [https://puma.io]
 gem "puma", "~> 5.0"
 
+# Sprockets Rails integration
+# [https://github.com/rails/sprockets-rails]
+gem "sprockets-rails"
+
 # Use ESM with importmap to manage modern JavaScript in Rails without
 # transpiling or bundling.
 # [https://github.com/rails/importmap-rails]
 gem "importmap-rails", ">= 0.3.4"
+
+# Bundle and transpile JavaScript in Rails with esbuild, rollup.js, or Webpack.
+# [https://github.com/rails/jsbundling-rails]
+gem "jsbundling-rails"
 
 # The speed of a single-page web application without having to write any
 # JavaScript.

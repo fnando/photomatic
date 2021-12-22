@@ -3,3 +3,13 @@
 <% else %>
   <%= link_to "Create your account", login_path %>
 <% end %>
+
+<div data-controller="hello">
+  <p>
+    Hello there, <span data-hello-target="name">stranger</span>!
+  </p>
+
+  <p>
+    <button data-action="click->hello#handleSayHello">Say hello!</button>
+  </p>
+</div>

@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./app/assets/scripts",
+    "target": "ES2015",
+    "lib": ["DOM", "ES2015"]
+  }
+}
