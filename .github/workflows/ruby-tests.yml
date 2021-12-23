@@ -11,6 +11,9 @@ jobs:
   build:
     name: Tests with Ruby ${{ matrix.ruby }} and ${{ matrix.gemfile }}
     runs-on: "ubuntu-latest"
+    if: |
+      github.actor == 'dependabot[bot]' && github.event_name == 'pull_request_target' ||
+      github.actor != 'dependabot[bot]'
     strategy:
       fail-fast: false
       matrix:
