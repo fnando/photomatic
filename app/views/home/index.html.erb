@@ -1,15 +1,5 @@
 <% if user_logged_in? %>
   <span class="username"><%= current_user.username %></span>
 <% else %>
-  <%= link_to "Create your account", login_path %>
+  <%= link_to t(".create_your_account"), login_path %>
 <% end %>
-
-<div data-controller="hello">
-  <p>
-    Hello there, <span data-hello-target="name">stranger</span>!
-  </p>
-
-  <p>
-    <button class="rounded-full bg-sky-600 px-5 py-2 text-white" data-action="click->hello#handleSayHello">Say hello!</button>
-  </p>
-</div>

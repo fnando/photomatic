@@ -103,6 +103,10 @@ gem "simple_auth"
 # [https://github.com/fnando/url_signature]
 gem "url_signature"
 
+# A different take on using ActionMailer, Markdown and I18n.
+# [https://github.com/fnando/actionmailer-markdown]
+gem "actionmailer-markdown"
+
 group :development, :test do
   # Meta package that requires several pry extensions.
   gem "pry-meta"

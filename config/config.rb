@@ -14,5 +14,6 @@ module Photomatic
     optional :force_ssl, bool, true
     optional :default_email_sender, string, "hi@example.com"
     optional :email_verification_ttl, int, 10.minutes
+    optional :tz, string, "Etc/UTC"
   end
 end

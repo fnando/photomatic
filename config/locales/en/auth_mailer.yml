@@ -1,0 +1,17 @@
+---
+en:
+  auth_mailer:
+    login:
+      subject: Here’s your login link
+      body: |
+        Hi there!
+
+        This is your login email. Please click the link below to get access to
+        Photomatic.
+
+        [Verify your email](%{login_link})
+
+        If the link above doesn’t work, please copy the address below and paste
+        it onto your browser.
+
+        %{login_link}

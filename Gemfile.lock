@@ -20,6 +20,9 @@ GEM
       activesupport (= 7.0.0)
       mail (~> 2.5, >= 2.5.4)
       rails-dom-testing (~> 2.0)
+    actionmailer-markdown (0.4.2)
+      actionmailer
+      redcarpet
     actionpack (7.0.0)
       actionview (= 7.0.0)
       activesupport (= 7.0.0)
@@ -171,6 +174,7 @@ GEM
       zeitwerk (~> 2.5)
     rainbow (3.0.0)
     rake (13.0.6)
+    redcarpet (3.5.1)
     regexp_parser (2.2.0)
     rexml (3.2.5)
     rubocop (1.23.0)
@@ -240,6 +244,7 @@ PLATFORMS
   arm64-darwin-21
 
 DEPENDENCIES
+  actionmailer-markdown
   ar-bigint
   ar-timestamptz
   ar-uuid
