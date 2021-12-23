@@ -214,6 +214,8 @@ GEM
     stimulus-rails (1.0.2)
       railties (>= 6.0.0)
     superconfig (1.0.0)
+    tailwindcss-rails (2.0.2-arm64-darwin)
+      railties (>= 6.0.0)
     thor (1.1.0)
     turbo-rails (1.0.0)
       actionpack (>= 6.0.0)
@@ -264,6 +266,7 @@ DEPENDENCIES
   sprockets-rails
   stimulus-rails (>= 0.4.0)
   superconfig
+  tailwindcss-rails
   turbo-rails (>= 0.7.11)
   url_signature
   voltage

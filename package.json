@@ -1,5 +1,6 @@
 {
-  "name": "app",
+  "name": "photomatic",
+  "license": "UNLICENSED",
   "private": "true",
   "dependencies": {
     "@hotwired/stimulus": "^3.0.1",
@@ -8,6 +9,7 @@
     "typescript": "^4.5.4"
   },
   "scripts": {
-    "build": "esbuild app/assets/scripts/*.* --minify --bundle --sourcemap --outdir=app/assets/builds"
+    "build": "esbuild app/assets/scripts/*.* --minify --bundle --sourcemap --outdir=app/assets/builds",
+    "build:css": "tailwindcss --config config/tailwind.config.js --minify --input ./app/assets/stylesheets/application.css --output ./app/assets/builds/application.css"
   }
 }
