@@ -1,5 +1,15 @@
-<% if user_logged_in? %>
-  <span class="username"><%= current_user.username %></span>
-<% else %>
-  <%= link_to "Create your account", login_path %>
-<% end %>
+<div class="flex flex-col w-screen h-screen justify-center p-10 lg:p-20">
+  <div>
+    <p>
+      <%= svg_image_tag "logo" %>
+    </p>
+
+    <h1 class="heading my-5 text-gray-900 font-extrabold text-3xl sm:text-5xl lg:text-8xl tracking-tight dark:text-white">Your <span class="heading-gradient">photography</span><br>is what matters.</h1>
+
+    <% if user_logged_in? %>
+      <span class="username"><%= current_user.username %></span>
+    <% else %>
+      <%= link_to t(".create_your_account"), login_path, class: "relative rounded-full bg-blue-500 px-5 py-2 text-white font-bold uppercase text-xs" %>
+    <% end %>
+  </div>
+</div>

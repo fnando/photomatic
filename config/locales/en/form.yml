@@ -1,0 +1,11 @@
+---
+en:
+  helpers:
+    submit:
+      login:
+        create: Create your account
+
+  form:
+    labels:
+      login:
+        email: What's your email?

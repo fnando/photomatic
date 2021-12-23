@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class LogIn
-  include Signal.call
+  include Voltage.call
 
   attr_reader :form
 

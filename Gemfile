@@ -18,10 +18,22 @@ gem "pg", "~> 1.1"
 # [https://puma.io]
 gem "puma", "~> 5.0"
 
+# Sprockets Rails integration
+# [https://github.com/rails/sprockets-rails]
+gem "sprockets-rails"
+
 # Use ESM with importmap to manage modern JavaScript in Rails without
 # transpiling or bundling.
 # [https://github.com/rails/importmap-rails]
 gem "importmap-rails", ">= 0.3.4"
+
+# Bundle and transpile JavaScript in Rails with esbuild, rollup.js, or Webpack.
+# [https://github.com/rails/jsbundling-rails]
+gem "jsbundling-rails"
+
+# Integrate Tailwind CSS with the asset pipeline in Rails.
+# [https://github.com/rails/tailwindcss-rails]
+gem "tailwindcss-rails"
 
 # The speed of a single-page web application without having to write any
 # JavaScript.
@@ -80,8 +92,8 @@ gem "rails-env"
 
 # A simple observer implementation for POROs (Plain Old Ruby Object) and
 # ActiveRecord objects.
-# [http://github.com/fnando/signal]
-gem "signal"
+# [http://github.com/fnando/voltage]
+gem "voltage"
 
 # A simple authentication system for Rails apps
 # [http://rubygems.org/gems/simple_auth]
@@ -90,6 +102,10 @@ gem "simple_auth"
 # Create and verify signed urls. Supports expiration time.
 # [https://github.com/fnando/url_signature]
 gem "url_signature"
+
+# A different take on using ActionMailer, Markdown and I18n.
+# [https://github.com/fnando/actionmailer-markdown]
+gem "actionmailer-markdown"
 
 group :development, :test do
   # Meta package that requires several pry extensions.
