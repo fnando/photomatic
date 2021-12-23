@@ -122,6 +122,8 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.12.5-arm64-darwin)
       racc (~> 1.4)
+    nokogiri (1.12.5-x86_64-linux)
+      racc (~> 1.4)
     parallel (1.21.0)
     parser (3.0.3.2)
       ast (~> 2.4.1)
@@ -179,13 +181,13 @@ GEM
     redcarpet (3.5.1)
     regexp_parser (2.2.0)
     rexml (3.2.5)
-    rubocop (1.23.0)
+    rubocop (1.24.0)
       parallel (~> 1.10)
       parser (>= 3.0.0.0)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 1.8, < 3.0)
       rexml
-      rubocop-ast (>= 1.12.0, < 2.0)
+      rubocop-ast (>= 1.15.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 3.0)
     rubocop-ast (1.15.0)
@@ -222,6 +224,8 @@ GEM
     superconfig (1.0.0)
     tailwindcss-rails (2.0.2-arm64-darwin)
       railties (>= 6.0.0)
+    tailwindcss-rails (2.0.2-x86_64-linux)
+      railties (>= 6.0.0)
     thor (1.1.0)
     turbo-rails (1.0.0)
       actionpack (>= 6.0.0)
@@ -244,6 +248,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   actionmailer-markdown
