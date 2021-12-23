@@ -5,7 +5,7 @@ module ApplicationHelper
     content_tag :span, class: "svg-#{name}" do
       File.read(
         Rails.root.join("app/assets/images").join("#{name}.svg")
-      ).html_safe
+      ).html_safe # rubocop:disable Rails/OutputSafety
     end
   end
 end

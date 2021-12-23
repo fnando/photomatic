@@ -110,6 +110,10 @@ gem "actionmailer-markdown"
 group :development, :test do
   # Meta package that requires several pry extensions.
   gem "pry-meta"
+
+  # Security vulnerability scanner for Ruby on Rails.
+  # [https://brakemanscanner.org]
+  gem "brakeman"
 end
 
 group :development do

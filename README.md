@@ -1,24 +1,16 @@
-# README
+<p align="center">
+  <a href="https://github.com/fnando/photomatic/">
+    <img width="250" src="https://github.com/fnando/photomatic/raw/main/photomatic.svg" alt="Photomatic">
+  </a>
+</p>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+<p align="center">
+  Your photography is what matters.
+</p>
 
-Things you may want to cover:
+<p align="center">
+  <a href="https://github.com/fnando/photomatic/actions/workflows/ruby-tests.yml"><img src="https://github.com/fnando/photomatic/actions/workflows/ruby-tests.yml/badge.svg" alt="ruby-tests status"></a>
+  <a href="https://github.com/fnando/photomatic/actions/workflows/codeql.yml"><img src="https://github.com/fnando/photomatic/actions/workflows/codeql.yml/badge.svg" alt="codeql status"></a>
+</p>
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+---
