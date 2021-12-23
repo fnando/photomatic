@@ -27,6 +27,7 @@ Brewfile.lock.json
 /config/master.key
 /config/credentials/development.key
 /config/credentials/test.key
+/config/credentials/production.key
 
 /app/assets/builds/*
 !/app/assets/builds/.keep

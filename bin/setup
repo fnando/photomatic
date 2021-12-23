@@ -20,7 +20,10 @@ FileUtils.chdir APP_ROOT do
     system!("brew bundle install --file Brewfile")
   end
 
-  puts "== Installing dependencies =="
+  puts "\n== Installing git hooks =="
+  system! "rm .git/hooks/* && ln -s .hooks/* .git/hooks"
+
+  puts "\n== Installing dependencies =="
   system! "gem install bundler --conservative"
   system("bundle check") || system!("bundle install")
 
