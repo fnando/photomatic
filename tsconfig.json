@@ -1,7 +1,12 @@
 {
   "compilerOptions": {
+    "rootDir": ".",
     "baseUrl": "./app/assets/scripts",
-    "target": "ES2015",
-    "lib": ["DOM", "ES2015"]
+    "lib": ["DOM", "es2015"],
+    "target": "es2015",
+    "moduleResolution": "node",
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
   }
 }
