@@ -132,6 +132,10 @@ group :development do
   # Automatic Rails code style checking tool.
   # [https://github.com/rubocop/rubocop-rails]
   gem "rubocop-rails"
+
+  # Process manager for applications with multiple components
+  # [http://github.com/ddollar/foreman]
+  gem "foreman"
 end
 
 group :test do

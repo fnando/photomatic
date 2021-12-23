@@ -94,6 +94,7 @@ GEM
       activerecord (>= 5.0.0)
     dotenv (2.7.6)
     erubi (1.10.0)
+    foreman (0.87.2)
     globalid (1.0.0)
       activesupport (>= 5.0)
     haikunate (0.1.1)
@@ -254,6 +255,7 @@ DEPENDENCIES
   capybara
   defaults
   dotenv
+  foreman
   haikunate
   human_routes
   importmap-rails (>= 0.3.4)
