@@ -1,0 +1,8 @@
+{
+  "setupFiles": ["./test/frontend/setup.ts"],
+  "moduleDirectories": ["node_modules", "<rootDir>/app/assets/scripts"],
+  "testEnvironment": "jsdom",
+  "transform": {
+    "^.+\\.ts$": ["esbuild-jest", { "sourcemap": true }]
+  }
+}
