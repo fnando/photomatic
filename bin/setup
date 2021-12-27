@@ -20,7 +20,7 @@ FileUtils.chdir APP_ROOT do
   macos_setup
 
   puts "\n== Installing git hooks =="
-  system! "rm .git/hooks/* && ln -s .hooks/* .git/hooks"
+  system! "rm .git/hooks/* && cp .hooks/* .git/hooks && chmod +x .git/hooks/*"
 
   puts "\n== Installing dependencies =="
   system! "gem install bundler --conservative"
@@ -34,7 +34,4 @@ FileUtils.chdir APP_ROOT do
 
   puts "\n== Restarting application server =="
   system! "bin/rails restart"
-
-  puts "\n== Installing git hooks =="
-  system! "cp .hooks/* .git/hooks/"
 end
