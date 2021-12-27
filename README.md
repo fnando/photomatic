@@ -10,6 +10,7 @@
 
 <p align="center">
   <a href="https://github.com/fnando/photomatic/actions/workflows/ruby-tests.yml"><img src="https://github.com/fnando/photomatic/actions/workflows/ruby-tests.yml/badge.svg" alt="ruby-tests status"></a>
+  <a href="https://github.com/fnando/photomatic/actions/workflows/typescript-tests.yml"><img src="https://github.com/fnando/photomatic/actions/workflows/typescript-tests.yml/badge.svg" alt="typescript-tests status"></a>
   <a href="https://github.com/fnando/photomatic/actions/workflows/codeql.yml"><img src="https://github.com/fnando/photomatic/actions/workflows/codeql.yml/badge.svg" alt="codeql status"></a>
 </p>
 
