@@ -107,6 +107,18 @@ gem "url_signature"
 # [https://github.com/fnando/actionmailer-markdown]
 gem "actionmailer-markdown"
 
+# Export i18n translations and use them on JavaScript.
+# [https://github.com/fnando/i18n-js]
+gem "i18n-js", "~> 4.0.0.alpha1"
+
+# Listen to file modifications
+# [https://github.com/guard/listen]
+gem "listen", require: false
+
+# Do some browser detection with Ruby.
+# [https://github.com/fnando/browser]
+gem "browser"
+
 group :development, :test do
   # Meta package that requires several pry extensions.
   gem "pry-meta"
