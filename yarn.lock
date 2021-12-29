@@ -799,6 +799,13 @@
   resolved "https://registry.yarnpkg.com/@rails/actioncable/-/actioncable-6.1.4.tgz#c3c5a9f8302c429af9722b6c50ab48049016d2a3"
   integrity sha512-0LmSKJTuo2dL6BQ+9xxLnS9lbkyfz2mBGeBnQ2J7o9Bn0l0q+ZC6VuoZMZZXPvABI4QT7Nfknv5WhfKYL+boew==
 
+"@rails/activestorage@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@rails/activestorage/-/activestorage-7.0.0.tgz#1d4391bae75693bcfa73fc220904b248de3dea06"
+  integrity sha512-9tE4P15DMgLhx/ILqvztepvu0YwtAyoYH1k25CrkkWphLNfu3HNbncfRgsJxmd9t8rMhZh8ZDEQchYrjuOL3hg==
+  dependencies:
+    spark-md5 "^3.0.1"
+
 "@sinonjs/commons@^1.7.0":
   version "1.8.3"
   resolved "https://registry.yarnpkg.com/@sinonjs/commons/-/commons-1.8.3.tgz#3802ddd21a50a949b6721ddd72da36e67e7f1b2d"
@@ -904,6 +911,11 @@
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/@types/prettier/-/prettier-2.4.2.tgz#4c62fae93eb479660c3bd93f9d24d561597a8281"
   integrity sha512-ekoj4qOQYp7CvjX8ZDBgN86w3MqQhLE1hczEJbEIjgFEumDy+na/4AJAbLXfgEWFNB2pKadM5rPFtuSGMWK7xA==
+
+"@types/rails__activestorage@^7.0.0":
+  version "7.0.0"
+  resolved "https://registry.yarnpkg.com/@types/rails__activestorage/-/rails__activestorage-7.0.0.tgz#3238b1a34d1327bf9eb7d03518ffa1468361bb9e"
+  integrity sha512-Z4SCPvo3T4tBTADQyot6hd/W7sjXmH+2HgzNNNTf3DPsX6QB9d7/eZS/h1XqPAbFjDfHufu2AmohmC9O9avjCA==
 
 "@types/stack-utils@^2.0.0":
   version "2.0.1"
@@ -4385,6 +4397,11 @@ source-map@^0.7.3:
   version "0.7.3"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.7.3.tgz#5302f8169031735226544092e64981f751750383"
   integrity sha512-CkCj6giN3S+n9qrYiBTX5gystlENnRW5jZeNLHpe6aue+SrHcG5VYwujhW9s4dY31mEGsxBDrHR6oI69fTXsaQ==
+
+spark-md5@^3.0.1:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/spark-md5/-/spark-md5-3.0.2.tgz#7952c4a30784347abcee73268e473b9c0167e3fc"
+  integrity sha512-wcFzz9cDfbuqe0FZzfi2or1sgyIrsDwmPwfZC4hiNidPdPINjeUwNfv5kldczoEAcjl9Y1L3SM7Uz2PUEQzxQw==
 
 split-string@^3.0.1, split-string@^3.0.2:
   version "3.1.0"

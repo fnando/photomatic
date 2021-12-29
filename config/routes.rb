@@ -8,4 +8,8 @@ Rails.application.routes.draw do
     get :check_inbox
     get :verify_email
   end
+
+  route :posts do
+    create
+  end
 end

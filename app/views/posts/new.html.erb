@@ -1,0 +1,15 @@
+<%= form_for @post, url: new_post_path, as: :post do |f| %>
+  <p>
+    <%= f.file_field :photo,
+                     direct_upload: true,
+                     accept: Photomatic::Config.photo_mime_types.join(",") %>
+  </p>
+
+  <p>
+    <%= hidden_field_tag :photo_id %>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= image_tag current_user.posts.last.photo.variant(:thumb) %>
+<%= image_tag current_user.posts.last.photo.variant(:large) %>

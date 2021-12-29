@@ -124,6 +124,15 @@ gem "browser"
 # [https://github.com/ruby/net-smtp]
 gem "net-smtp"
 
+# AWS SDK for Ruby - Amazon S3
+# [https://github.com/aws/aws-sdk-ruby]
+gem "aws-sdk-s3", require: false
+
+# High-level wrapper for processing images for the web with ImageMagick or
+# libvips.
+# [https://github.com/janko/image_processing]
+gem "image_processing"
+
 group :development, :test do
   # Meta package that requires several pry extensions.
   gem "pry-meta"

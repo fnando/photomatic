@@ -1,0 +1,15 @@
+---
+local:
+  service: Disk
+  root: <%= Rails.root.join("tmp/storage/dev") %>
+
+test:
+  service: Disk
+  root: <%= Rails.root.join("tmp/storage/test") %>
+
+amazon:
+  service: S3
+  access_key_id: <%= Photomatic::Config.aws_upload_access_key_id %>
+  secret_access_key: <%= Photomatic::Config.aws_upload_secret_access_key_id %>
+  bucket: <%= Photomatic::Config.aws_upload_bucket %>
+  region: <%= Photomatic::Config.aws_upload_region %>
