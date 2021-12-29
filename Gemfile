@@ -3,11 +3,12 @@
 source "https://rubygems.org"
 git_source(:github) {|repo| "https://github.com/#{repo}.git" }
 
-ruby "3.0.3"
+ruby "3.1.0"
 
 # Full-stack web application framework.
 # [https://rubyonrails.org]
-gem "rails", "~> 7.0.0"
+# gem "rails", "~> 7.0.0"
+gem "rails", github: "rails/rails", branch: "7-0-stable"
 
 # Pg is the Ruby interface to the {PostgreSQL RDBMS}[http://www.postgresql.org/]
 # [https://github.com/ged/ruby-pg]
@@ -118,6 +119,10 @@ gem "listen", require: false
 # Do some browser detection with Ruby.
 # [https://github.com/fnando/browser]
 gem "browser"
+
+# Simple Mail Transfer Protocol client library for Ruby.
+# [https://github.com/ruby/net-smtp]
+gem "net-smtp"
 
 group :development, :test do
   # Meta package that requires several pry extensions.
