@@ -33,3 +33,6 @@ Brewfile.lock.json
 !/app/assets/builds/.keep
 
 /node_modules
+
+# Ignore auto-generated file from i18n-js.
+app/assets/scripts/translations.json
