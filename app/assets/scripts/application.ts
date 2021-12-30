@@ -17,15 +17,13 @@ i18n.defaultLocale = "en";
 i18n.enableFallback = true;
 i18n.locale = userLocale;
 
-function action(name: string): (event: any) => void {
-  return (event) =>
-    console.log(JSON.stringify({ name, event, detail: event.detail }, null, 2));
-}
+addEventListener(
+  "direct-upload:initialize",
+  (event: ActiveStorage.DirectUploadInitializeEvent) => {
+    const { detail } = event;
 
-addEventListener("direct-upload:initialize", ({ detail }) => {
-  document.querySelector("#photo_id").value = detail.id;
-});
-addEventListener("direct-upload:start", action("start"));
-addEventListener("direct-upload:progress", action("progress"));
-addEventListener("direct-upload:error", action("error"));
-addEventListener("direct-upload:end", action("end"));
+    document.querySelector<HTMLInputElement>("#photo_id").value = String(
+      detail.id,
+    );
+  },
+);
