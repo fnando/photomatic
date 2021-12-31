@@ -31,7 +31,7 @@ jobs:
             hashFiles('**/yarn.lock') }}
 
       - name: Set up Node
-        uses: actions/setup-node@v2-beta
+        uses: actions/setup-node@v2.5.1
         with:
           node-version: ${{ matrix.node }}
 
