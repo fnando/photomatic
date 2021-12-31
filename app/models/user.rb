@@ -10,5 +10,5 @@ class User < ApplicationRecord
                          User.exists?(username: new_username)
                        end
                      }
-  has_many :posts
+  has_many :posts, dependent: :restrict_with_exception
 end
