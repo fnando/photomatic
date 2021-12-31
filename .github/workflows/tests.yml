@@ -1,5 +1,5 @@
 ---
-name: ruby-tests
+name: tests
 
 on:
   pull_request_target:
@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    name: Tests with Ruby ${{ matrix.ruby }}
+    name: Tests with Ruby v${{ matrix.ruby }} and Node v${{ matrix.node }}
     runs-on: "ubuntu-latest"
     if: |
       github.actor == 'dependabot[bot]' && github.event_name == 'pull_request_target' ||
@@ -18,6 +18,7 @@ jobs:
       fail-fast: false
       matrix:
         ruby: ["3.1"]
+        node: ["16"]
 
     services:
       postgres:
@@ -28,10 +29,17 @@ jobs:
           --health-retries 5
 
     steps:
+      - name: Install PostgreSQL client
+        env:
+          PGHOST: localhost
+          PGUSER: postgres
+        run: |
+          sudo apt-get -yqq install libpq-dev
+          psql -U postgres -c "create database test"
+
       - uses: actions/checkout@v1
 
       - uses: actions/cache@v2
-        id: bundler-cache
         with:
           path: vendor/bundle
           key: >
@@ -43,13 +51,28 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby }}
 
-      - name: Install PostgreSQL client
-        env:
-          PGHOST: localhost
-          PGUSER: postgres
+      - uses: actions/cache@v2
+        id: yarn-cache
+        with:
+          path: "**/node_modules"
+          key: >
+            ${{ runner.os }}-${{ matrix.node }}-yarn-${{
+            hashFiles('**/yarn.lock') }}
+
+      - name: Set up Node
+        uses: actions/setup-node@v2.5.1
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Node version
+        run: node -v
+
+      - name: Ruby version
+        run: ruby -v
+
+      - name: Install npm dependencies
         run: |
-          sudo apt-get -yqq install libpq-dev
-          psql -U postgres -c "create database test"
+          yarn install
 
       - name: Install gem dependencies
         run: |
@@ -57,15 +80,25 @@ jobs:
           bundle config path vendor/bundle
           bundle update --jobs 4 --retry 3
 
-      - name: Run Tests
+      - name: Run tests
         env:
           RAILS_ENV: test
           RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+          DATABASE_URL: postgres:///test
           PGHOST: localhost
           PGUSER: postgres
-          DATABASE_URL: postgres:///test
-          BUNDLE_GEMFILE: ${{ matrix.gemfile }}
         run: |
           bundle exec rails test:all
+          yarn test:ci
+
+      - name: Run lint
+        env:
+          RAILS_ENV: test
+          RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+          DATABASE_URL: postgres:///test
+          PGHOST: localhost
+          PGUSER: postgres
+        run: |
           bundle exec rubocop
           bundle exec brakeman
+          yarn lint

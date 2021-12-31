@@ -1,6 +1,7 @@
 {
   "setupFiles": ["./test/frontend/setup.ts"],
   "moduleDirectories": ["node_modules", "<rootDir>/app/assets/scripts"],
+  "modulePathIgnorePatterns": ["vendor/bundle"],
   "testEnvironment": "jsdom",
   "transform": {
     "^.+\\.ts$": ["esbuild-jest", { "sourcemap": true }]
