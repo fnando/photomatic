@@ -1,0 +1,67 @@
+/* Specify the submit wrapper style.  */
+form p:last-of-type {
+  border-top: 1px solid var(--mute-lightest-color);
+  padding-top: 30px;
+  margin-top: 30px;
+}
+
+.field.text label:after {
+  content: "";
+  display: block;
+}
+
+.field.boolean label {
+  font-size: 16px;
+  color: var(--mute-color);
+  margin-left: 10px;
+}
+
+.field.text label,
+.field.email label {
+  font-weight: bold;
+}
+
+.field-hint {
+  display: block;
+  padding-bottom: 10px;
+  font-size: 16px;
+  color: var(--mute-color);
+  font-weight: normal;
+}
+
+.field:not(.boolean) input,
+.field textarea {
+  border-radius: 5px;
+  border: 2px solid var(--text-field-border);
+  font-size: inherit;
+  padding: 10px 15px;
+  width: 100%;
+}
+
+.field input {
+  max-width: 350px;
+}
+
+.field textarea {
+  font-size: 16px;
+  min-height: 150px;
+  resize: none;
+  line-height: inherit;
+}
+
+.field-error {
+  color: var(--text-field-error);
+  display: block;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.field-error:before {
+  content: "⚠️";
+  display: inline-block;
+  margin-right: 5px;
+}
+
+::placeholder {
+  color: var(--mute-color);
+}

@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
-class PostForm
-  include ActiveModel::Model
+class PostForm < Form
+  attribute :description, :string
+  attribute :keywords, :string
+  attribute :show_location, :boolean
+  attribute :visibility, :string
 
-  attr_accessor :photo
+  validates :description, presence: {include_blank: false}
 end

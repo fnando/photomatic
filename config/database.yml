@@ -1,11 +1,11 @@
 ---
 development:
   adapter: postgresql
-  name: 35mm_dev
+  database: photomatic_dev
 
 test:
   adapter: postgresql
-  name: 35mm_test
+  database: photomatic_test
 
 production:
   url: <%= ENV["DATABASE_URL"] %>

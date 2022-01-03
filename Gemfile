@@ -133,6 +133,15 @@ gem "aws-sdk-s3", require: false
 # [https://github.com/janko/image_processing]
 gem "image_processing"
 
+# ActiveStorage blob validator.
+# [https://github.com/aki77/activestorage-validator]
+gem "activestorage-validator"
+
+# Easily define <meta> and <link> tags. I18n support for descriptions, keywords
+# and titles.
+# [https://github.com/fnando/page_meta]
+gem "page_meta"
+
 group :development, :test do
   # Meta package that requires several pry extensions.
   gem "pry-meta"

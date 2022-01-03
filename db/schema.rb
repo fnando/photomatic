@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2021_12_29_022632) do
   # Custom types defined in this database.
   # Note that some types may not work with other database engines. Be careful if changing database.
   create_enum "post_orientation", ["landscape", "portrait"]
-  create_enum "post_visibility", ["public", "private", "unlisted"]
+  create_enum "post_visibility", ["private", "public", "unlisted"]
 
   create_table "active_storage_attachments", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name", null: false
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 2021_12_29_022632) do
     t.text "region", default: "", null: false
     t.text "city", default: "", null: false
     t.text "camera", default: "", null: false
+    t.boolean "show_location", default: true, null: false
     t.enum "orientation", null: false, enum_type: "post_orientation"
     t.enum "visibility", default: "private", null: false, enum_type: "post_visibility"
     t.jsonb "meta", default: {}, null: false

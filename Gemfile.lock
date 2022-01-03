@@ -90,6 +90,8 @@ GEM
     actionmailer-markdown (0.4.2)
       actionmailer
       redcarpet
+    activestorage-validator (0.2.0)
+      rails (>= 6.0.4.1)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     ar-bigint (0.2.0)
@@ -190,6 +192,8 @@ GEM
     nokogiri (1.12.5)
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
+    page_meta (1.0.0)
+      rails (>= 6.0)
     parallel (1.21.0)
     parser (3.1.0.0)
       ast (~> 2.4.1)
@@ -303,6 +307,7 @@ PLATFORMS
 
 DEPENDENCIES
   actionmailer-markdown
+  activestorage-validator
   ar-bigint
   ar-timestamptz
   ar-uuid
@@ -323,6 +328,7 @@ DEPENDENCIES
   listen
   minitest-utils
   net-smtp
+  page_meta
   pg (~> 1.1)
   pry-meta
   puma (~> 5.0)

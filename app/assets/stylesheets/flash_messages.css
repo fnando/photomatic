@@ -1,0 +1,15 @@
+.flash-message {
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+
+.flash-message.alert {
+  background: var(--flash-alert-bg);
+  color: var(--flash-alert-fg);
+}
+
+.flash-message.success {
+  background: var(--flash-success-bg);
+  color: var(--flash-success-fg);
+}

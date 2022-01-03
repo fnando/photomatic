@@ -16,14 +16,3 @@ i18n.store(translations);
 i18n.defaultLocale = "en";
 i18n.enableFallback = true;
 i18n.locale = userLocale;
-
-addEventListener(
-  "direct-upload:initialize",
-  (event: ActiveStorage.DirectUploadInitializeEvent) => {
-    const { detail } = event;
-
-    document.querySelector<HTMLInputElement>("#photo_id").value = String(
-      detail.id,
-    );
-  },
-);

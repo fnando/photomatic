@@ -3,15 +3,22 @@
 class Post < ApplicationRecord
   belongs_to :user
 
-  has_one_attached :photo do |attachment|
-    attachment.variant :thumb, resize_to_fill: [350, nil]
-    attachment.variant :large, resize_to_fill: [1024, nil]
-  end
+  has_one_attached :photo
+  has_one_attached :thumb
+  has_one_attached :large
+
+  validates :photo,
+            presence: true,
+            blob: {
+              content_type: Photomatic::Config.photo_mime_types,
+              size_range: 1..(10.megabytes)
+            }
 
   defaults description: "",
            country: "",
            region: "",
            city: "",
            camera: "",
-           orientation: "landscape"
+           orientation: "landscape",
+           visibility: "private"
 end

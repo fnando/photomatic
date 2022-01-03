@@ -15,7 +15,7 @@ module Photomatic
     optional :tz, string, "Etc/UTC"
     optional :photo_mime_types,
              array(string),
-             %w[image/png image/jpeg image/heic image/heif]
+             %w[image/png image/jpeg image/heic image/heif image/webp]
 
     optional :aws_upload_access_key_id, string, "sample-value"
     optional :aws_upload_secret_access_key_id, string, "sample-value"

@@ -4,8 +4,33 @@ en:
     submit:
       login:
         create: Create your account
+      post:
+        create: Share this photo
 
   form:
     labels:
       login:
         email: What's your email?
+
+      post:
+        description: Description
+        show_location: >
+          Show photo location (extracted from the photo, limited to city name).
+
+        keywords: Keywords
+        visibility: Visibility
+        visibility_private: Private (only you can see it)
+        visibility_public: Public (anyone can see it)
+        visibility_unlisted: Unlisted (anyone with url can see it)
+
+    placeholders:
+      login:
+        email: E.g. me@example.com
+
+    hints:
+      login:
+        email: this is just a hint.
+
+      post:
+        description: >
+          What’s the story behind this photo? Talk a little bit about it.

@@ -1,0 +1,12 @@
+---
+en:
+  page_meta:
+    titles:
+      base: "%{value} • Photomatic"
+      login:
+        new: "Sign in to your account"
+
+    descriptions:
+      login:
+        new: >
+          Type your email below. If you don’t have an account, we’ll create one.
