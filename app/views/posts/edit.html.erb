@@ -2,25 +2,15 @@
 <p>You’re almost there. Let’s do this!</p>
 
 <%= form_for @post_form, as: :post, url: edit_post_path(@post_form) do |f| %>
-  <%= f.field :description %>
-  <%= f.field :show_location, :boolean %>
+  <%= f.input :description, as: :text %>
+  <%= f.input :show_location, as: :boolean, wrapper: :control_group %>
+  <%= f.input :visibility, as: :select, collection: [
+                [t("simple_form.labels.post.visibility_private"), "private"],
+                [t("simple_form.labels.post.visibility_public"), "public"],
+                [t("simple_form.labels.post.visibility_unlisted"), "unlisted"]
+               ], include_blank: false %>
+  <%= f.input :keywords %>
 
-  <p>
-    <%= f.label :visibility, t("form.labels.post.visibility") %>
-    <%= f.select :visibility,
-                 [
-                  [t("form.labels.post.visibility_private"), "private"],
-                  [t("form.labels.post.visibility_public"), "public"],
-                  [t("form.labels.post.visibility_unlisted"), "unlisted"]
-                 ],
-                 include_blank: false %>
-  </p>
-
-  <p>
-    <%= f.label :keywords, t("form.labels.post.keywords") %>
-    <%= f.text_field :keywords %>
-    <%= f.error_for :keywords %>
-  </p>
 
   <p>
     <%= f.submit %>

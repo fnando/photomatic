@@ -1,4 +1,5 @@
-.btn-primary {
+button.primary,
+input.primary {
   background: var(--button-primary-bg);
   border-radius: 8px;
   border: none;

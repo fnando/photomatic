@@ -7,7 +7,18 @@ en:
       post:
         create: Share this photo
 
-  form:
+  simple_form:
+    "yes": "Yes"
+    "no": "No"
+
+    required:
+      text: ""
+      mark: ""
+      html: ""
+
+    error_notification:
+      default_message: "Please review the problems below:"
+
     labels:
       login:
         email: What's your email?
@@ -29,8 +40,10 @@ en:
 
     hints:
       login:
-        email: this is just a hint.
+        email: This will be used as your login and for notifications.
 
       post:
         description: >
           What’s the story behind this photo? Talk a little bit about it.
+        visibility: Control who can see your photos.
+        keywords: Separate keywords with a comma.

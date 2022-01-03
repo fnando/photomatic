@@ -5,32 +5,30 @@ form p:last-of-type {
   margin-top: 30px;
 }
 
-.field.text label:after {
+/* Text inputs  */
+.input label:after {
   content: "";
   display: block;
+  padding-bottom: 5px;
 }
 
-.field.boolean label {
-  font-size: 16px;
-  color: var(--mute-color);
-  margin-left: 10px;
-}
-
-.field.text label,
-.field.email label {
+.input label {
   font-weight: bold;
 }
 
-.field-hint {
-  display: block;
-  padding-bottom: 10px;
-  font-size: 16px;
-  color: var(--mute-color);
-  font-weight: normal;
+.input.string input {
+  max-width: 350px;
 }
 
-.field:not(.boolean) input,
-.field textarea {
+.input textarea {
+  font-size: 16px;
+  min-height: 150px;
+  resize: none;
+  line-height: inherit;
+}
+
+.input input,
+.input textarea {
   border-radius: 5px;
   border: 2px solid var(--text-field-border);
   font-size: inherit;
@@ -38,25 +36,43 @@ form p:last-of-type {
   width: 100%;
 }
 
-.field input {
-  max-width: 350px;
-}
-
-.field textarea {
+/* Checkbox inputs  */
+.input.boolean label {
   font-size: 16px;
-  min-height: 150px;
-  resize: none;
-  line-height: inherit;
+  color: var(--mute-color);
 }
 
-.field-error {
+.input.boolean input {
+  margin-right: 10px;
+  width: auto;
+}
+
+.input.boolean label:after {
+  display: none;
+}
+
+.input.boolean label {
+  font-weight: normal;
+}
+
+/* Hint  */
+.input .hint {
+  display: block;
+  margin-top: -5px;
+  padding-bottom: 10px;
+  font-size: 16px;
+  color: var(--mute-color);
+  font-weight: normal;
+}
+
+.input .error {
   color: var(--text-field-error);
   display: block;
   font-size: 16px;
   margin-top: 5px;
 }
 
-.field-error:before {
+.input .error:before {
   content: "⚠️";
   display: inline-block;
   margin-right: 5px;

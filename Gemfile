@@ -142,6 +142,10 @@ gem "activestorage-validator"
 # [https://github.com/fnando/page_meta]
 gem "page_meta"
 
+# Forms made easy!
+# [https://github.com/heartcombo/simple_form]
+gem "simple_form"
+
 group :development, :test do
   # Meta package that requires several pry extensions.
   gem "pry-meta"
