@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+root=`pwd`
+
+watchman watch "$root"
+watchman trigger-del "$root" rails
+watchman -j <<-JSON
+[
+  "trigger",
+  "$root",
+  {
+    "name": "rails",
+    "expression": [
+      "anyof",
+      ["match", "config/**/*.rb", "wholename"],
+      ["match", "lib/**/*.rb", "wholename"],
+      ["name", ["Gemfile", "Gemfile.lock", "config.ru"]],
+      [
+        "allof",
+        ["dirname", "app", ["depth", "eq", 0]],
+        ["type", "d"]
+      ]
+    ],
+    "command": ["touch", "tmp/restart.txt"]
+  }
+]
+JSON
+
+while true; do
+  sleep 1
+done
