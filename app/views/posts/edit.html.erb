@@ -1,6 +1,3 @@
-<h1>Post a new photo</h1>
-<p>You’re almost there. Let’s do this!</p>
-
 <%= form_for @post_form, as: :post, url: edit_post_path(@post_form) do |f| %>
   <%= f.input :description, as: :text %>
   <%= f.input :show_location, as: :boolean, wrapper: :control_group %>

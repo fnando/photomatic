@@ -5,3 +5,7 @@
 @import "./form.css";
 @import "./utilities.css";
 @import "./flash_messages.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

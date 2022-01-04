@@ -32,10 +32,6 @@ gem "importmap-rails", ">= 0.3.4"
 # [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"
 
-# Integrate Tailwind CSS with the asset pipeline in Rails.
-# [https://github.com/rails/tailwindcss-rails]
-gem "tailwindcss-rails"
-
 # The speed of a single-page web application without having to write any
 # JavaScript.
 # [https://github.com/hotwired/turbo-rails]

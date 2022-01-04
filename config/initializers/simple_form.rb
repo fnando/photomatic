@@ -201,6 +201,7 @@ class DirectUploadInput < SimpleForm::Inputs::FileInput
 end
 
 ActionController::Base.default_form_builder(SimpleForm::FormBuilder)
+ActionView::Base.field_error_proc = ->(html_tag, _instance) { html_tag.to_s }
 
 module SimpleFormExtensions
   def submit(*args, **options)

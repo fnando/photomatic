@@ -1,81 +1,84 @@
+/* Overrides  */
+@layer base {
+  input:not([type="submit"]):focus,
+  textarea:focus,
+  select:focus {
+    --tw-ring-color: var(--accent-color);
+    border-color: var(--tw-ring-color);
+  }
+
+  [type="checkbox"]:checked {
+    color: var(--accent-color);
+  }
+}
+
 /* Specify the submit wrapper style.  */
 form p:last-of-type {
-  border-top: 1px solid var(--mute-lightest-color);
-  padding-top: 30px;
-  margin-top: 30px;
+  @apply border-t-2 border-slate-200 pt-8 mt-8;
 }
 
 /* Text inputs  */
 .input label:after {
+  @apply pb-1 block;
+
   content: "";
-  display: block;
-  padding-bottom: 5px;
 }
 
 .input label {
-  font-weight: bold;
+  @apply font-bold;
 }
 
-.input.string input {
-  max-width: 350px;
+.input.string input,
+.input select {
+  @apply max-w-md;
 }
 
 .input textarea {
-  font-size: 16px;
-  min-height: 150px;
-  resize: none;
-  line-height: inherit;
+  @apply resize-none;
+
+  min-height: 10rem;
 }
 
 .input input,
-.input textarea {
-  border-radius: 5px;
-  border: 2px solid var(--text-field-border);
-  font-size: inherit;
-  padding: 10px 15px;
-  width: 100%;
+.input textarea,
+.input select {
+  @apply rounded-lg p-3 w-full border-2 border-slate-300;
 }
 
 /* Checkbox inputs  */
 .input.boolean label {
-  font-size: 16px;
+  @apply text-base;
+
   color: var(--mute-color);
 }
 
 .input.boolean input {
-  margin-right: 10px;
-  width: auto;
+  @apply cursor-pointer w-auto rounded mr-2 p-2;
 }
 
 .input.boolean label:after {
-  display: none;
+  @apply hidden;
 }
 
 .input.boolean label {
-  font-weight: normal;
+  @apply font-normal;
 }
 
 /* Hint  */
 .input .hint {
-  display: block;
-  margin-top: -5px;
-  padding-bottom: 10px;
-  font-size: 16px;
+  @apply text-base pb-2 -mt-1 block;
+
   color: var(--mute-color);
-  font-weight: normal;
 }
 
 .input .error {
-  color: var(--text-field-error);
-  display: block;
-  font-size: 16px;
-  margin-top: 5px;
+  @apply block text-base mt-1 text-yellow-600;
 }
 
 .input .error:before {
+  @apply mr-2 inline-block;
+
   content: "⚠️";
-  display: inline-block;
-  margin-right: 5px;
 }
 
 ::placeholder {
