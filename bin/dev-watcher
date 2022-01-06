@@ -2,7 +2,8 @@
 
 root=`pwd`
 
-watchman watch "$root"
+watchman watch-del "$root"
+watchman watch-project "$root"
 watchman trigger-del "$root" rails
 watchman -j <<-JSON
 [
@@ -21,7 +22,7 @@ watchman -j <<-JSON
         ["type", "d"]
       ]
     ],
-    "command": ["touch", "tmp/restart.txt"]
+    "command": ["bin/rails", "restart"]
   }
 ]
 JSON

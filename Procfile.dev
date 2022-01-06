@@ -1,5 +1,5 @@
-web: bin/rails server -p 3000
+web: bin/rails log:clear tmp:clear && bin/rails server -p 3000
 js: yarn build:js --watch
 mailhog: mailhog -smtp-bind-addr 127.0.0.1:1025 -ui-bind-addr 127.0.0.1:8025 -api-bind-addr 127.0.0.1:8025
 css: yarn build:css --watch
-watchman: bin/watcher
+watchman: bin/dev-watcher
