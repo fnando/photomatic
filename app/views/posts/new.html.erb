@@ -2,7 +2,6 @@
   <%= f.hidden_field :description %>
 
   <%= f.input :photo,
-              as: :direct_upload,
               input_html: {accept: Photomatic::Config.photo_mime_types.join(",")} %>
 
   <p>

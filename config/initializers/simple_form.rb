@@ -194,12 +194,6 @@ SimpleForm.setup do |config|
   # config.input_field_error_class = 'is-invalid'
 end
 
-class DirectUploadInput < SimpleForm::Inputs::FileInput
-  def input_html_options
-    super.merge(direct_upload: true)
-  end
-end
-
 ActionController::Base.default_form_builder(SimpleForm::FormBuilder)
 ActionView::Base.field_error_proc = ->(html_tag, _instance) { html_tag.to_s }
 
