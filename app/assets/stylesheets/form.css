@@ -81,6 +81,12 @@ form p:last-of-type {
   content: "⚠️";
 }
 
+/* Placeholder */
 ::placeholder {
   color: var(--mute-color);
+}
+
+/* File input  */
+[type="file"] {
+  @apply appearance-none;
 }

@@ -10,3 +10,8 @@ input.primary {
          text-white
          uppercase;
 }
+
+button[disabled],
+input[type="submit"][disabled] {
+  @apply bg-slate-400 cursor-default;
+}
