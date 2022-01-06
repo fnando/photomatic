@@ -19,12 +19,12 @@ end
 FileUtils.chdir APP_ROOT do
   macos_setup
 
-  puts "\n== Installing git hooks =="
-  system! "rm .git/hooks/* && cp .hooks/* .git/hooks && chmod +x .git/hooks/*"
-
-  puts "\n== Installing dependencies =="
+  puts "\n== Installing Ruby dependencies =="
   system! "gem install bundler --conservative"
   system("bundle check") || system!("bundle install")
+
+  puts "\n== Installing Node dependencies =="
+  system! "which node && which yarn && yarn install"
 
   puts "\n== Preparing database =="
   system! "bin/rails db:prepare"

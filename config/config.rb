@@ -2,7 +2,6 @@
 
 module Photomatic
   Config = SuperConfig.new do
-    mandatory :database_url, string
     credential :encryptor_secret
     credential :auth_code_keyring
     credential :auth_code_digest_salt

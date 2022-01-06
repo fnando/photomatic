@@ -1,6 +1,9 @@
 {
   "name": "photomatic",
   "private": "true",
+  "engines": {
+    "node": "16.x"
+  },
   "dependencies": {
     "@fnando/codestyle": "^0.0.13",
     "@fnando/eslint-config-codestyle": "^0.0.9",
