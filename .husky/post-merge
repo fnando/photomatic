@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# If yarn's lock file has changed, then install deps.
+git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD | grep --quiet yarn.lock && yarn install || exit 0
+
+# If bundler's lock file has changed, then install deps.
+git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD | grep --quiet Gemfile.lock && bundle install || exit 0
