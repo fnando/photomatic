@@ -71,11 +71,12 @@ form p:last-of-type {
   color: var(--mute-color);
 }
 
-.input .error {
+/* Error  */
+.field-error {
   @apply block text-base mt-1 text-yellow-600;
 }
 
-.input .error:before {
+.field-error:before {
   @apply mr-2 inline-block;
 
   content: "⚠️";

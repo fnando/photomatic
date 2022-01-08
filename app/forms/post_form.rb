@@ -6,5 +6,12 @@ class PostForm < Form
   attribute :show_location, :boolean
   attribute :visibility, :string
 
-  validates :description, presence: {include_blank: false}
+  def keywords=(keywords)
+    keywords = if keywords.is_a?(Array)
+                 keywords.join(", ")
+               else
+                 keywords.split(/\s*,\s*/).uniq.sort.join(", ")
+               end
+    super(keywords)
+  end
 end
