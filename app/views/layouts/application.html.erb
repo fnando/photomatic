@@ -11,18 +11,17 @@
   </head>
 
   <body>
+    <%= svg_image_tag(:icons) %>
+    <%= render "top_bar" %>
 
-      <%= render "top_bar" %>
+    <div class="main-content">
+      <%= render "flash_messages" %>
 
-      <div class="main-content">
-        <%= render "flash_messages" %>
-
-        <div class="page-header">
-          <h1 class="page-title"><%= page_meta.title.simple %></h1>
-          <p class="page-description"><%= page_meta.description %></p>
-        </div>
-        <%= yield %>
+      <div class="page-header">
+        <h1 class="page-title"><%= page_meta.title.simple %></h1>
+        <p class="page-description"><%= page_meta.description %></p>
       </div>
-
+      <%= yield %>
+    </div>
   </body>
 </html>

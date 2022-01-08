@@ -301,6 +301,12 @@ GEM
       railties (>= 6.0.0)
     strscan (3.0.1)
     superconfig (1.0.0)
+    svg_optimizer (0.2.6)
+      nokogiri
+    svg_sprite (1.0.1)
+      nokogiri
+      svg_optimizer
+      thor
     thor (1.2.1)
     timeout (0.2.0)
     turbo-rails (1.0.0)
@@ -370,6 +376,7 @@ DEPENDENCIES
   sprockets-rails
   stimulus-rails (>= 0.4.0)
   superconfig
+  svg_sprite
   turbo-rails (>= 0.7.11)
   url_signature
   voltage

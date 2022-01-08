@@ -48,3 +48,8 @@ body {
 .main-content {
   @apply mx-auto px-10 pb-10 pt-24 max-w-2xl;
 }
+
+.icon {
+  width: 16px;
+  height: 16px;
+}

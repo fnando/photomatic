@@ -38,6 +38,9 @@ en:
       login:
         email: E.g. me@example.com
 
+      post:
+        description: Write a caption…
+
     hints:
       login:
         email: This will be used as your login and for notifications.

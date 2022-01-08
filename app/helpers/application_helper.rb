@@ -8,4 +8,10 @@ module ApplicationHelper
       ).html_safe # rubocop:disable Rails/OutputSafety
     end
   end
+
+  def icon(name)
+    content_tag :svg, class: "icon icon--#{name}" do
+      content_tag :use, nil, href: "#icon--#{name}"
+    end
+  end
 end

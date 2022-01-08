@@ -183,6 +183,10 @@ group :development do
   # Process manager for applications with multiple components
   # [http://github.com/ddollar/foreman]
   gem "foreman"
+
+  # Create SVG sprites using SVG links.
+  # [https://github.com/fnando/svg_sprite]
+  gem "svg_sprite"
 end
 
 group :test do

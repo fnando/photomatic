@@ -5,6 +5,8 @@ root=`pwd`
 watchman watch-del "$root"
 watchman watch-project "$root"
 watchman trigger-del "$root" rails
+watchman trigger-del "$root" svg_sprite
+
 watchman -j <<-JSON
 [
   "trigger",
@@ -23,6 +25,36 @@ watchman -j <<-JSON
       ]
     ],
     "command": ["bin/rails", "restart"]
+  }
+]
+JSON
+
+watchman -j <<-JSON
+[
+  "trigger",
+  "$root",
+  {
+    "name": "svg_sprite",
+    "expression": [
+      "anyof",
+      ["match", "app/assets/images/icons/**/*.svg", "wholename"]
+    ],
+    "command": [
+      "svg_sprite",
+      "generate",
+      "--input",
+      "app/assets/images/icons",
+      "--sprite-path",
+      "app/assets/images/icons.svg",
+      "--css-path",
+      "app/assets/stylesheets/icons.css",
+      "--name",
+      "icon",
+      "--stroke",
+      "current-color",
+      "--fill",
+      "current-color"
+    ]
   }
 ]
 JSON
