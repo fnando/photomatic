@@ -1,0 +1,12 @@
+{
+  "root_files": [".watchmanconfig"],
+  "ignore_dirs": [
+    ".git",
+    "app/assets/builds",
+    "node_modules",
+    "public/assets",
+    "test",
+    "tmp",
+    "vendor"
+  ]
+}

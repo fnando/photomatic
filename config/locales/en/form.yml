@@ -4,8 +4,49 @@ en:
     submit:
       login:
         create: Create your account
+      post:
+        create: Share this photo
 
-  form:
+  simple_form:
+    "yes": "Yes"
+    "no": "No"
+
+    required:
+      text: ""
+      mark: ""
+      html: ""
+
+    error_notification:
+      default_message: "Please review the problems below:"
+
     labels:
       login:
         email: What's your email?
+
+      post:
+        description: Description
+        show_location: >
+          Show photo location (extracted from the photo, limited to city name).
+
+        keywords: Keywords
+        visibility: Visibility
+        visibility_private: Private (only you can see it)
+        visibility_public: Public (anyone can see it)
+        visibility_unlisted: Unlisted (anyone with url can see it)
+
+    placeholders:
+      login:
+        email: E.g. me@example.com
+
+      post:
+        description: Write a caption…
+
+    hints:
+      login:
+        email: This will be used as your login and for notifications.
+
+      post:
+        description: >
+          What’s the story behind this photo? Talk a little bit about it.
+        visibility: Control who can see your photos.
+        keywords: Separate keywords with a comma.

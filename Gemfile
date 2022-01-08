@@ -7,17 +7,16 @@ ruby "3.1.0"
 
 # Full-stack web application framework.
 # [https://rubyonrails.org]
-# gem "rails", "~> 7.0.0"
-gem "rails", github: "rails/rails", branch: "7-0-stable"
+gem "rails", "~> 7.0.0"
 
 # Pg is the Ruby interface to the {PostgreSQL RDBMS}[http://www.postgresql.org/]
 # [https://github.com/ged/ruby-pg]
-gem "pg", "~> 1.1"
+gem "pg"
 
 # Puma is a simple, fast, threaded, and highly parallel HTTP 1.1 server for
 # Ruby/Rack applications
 # [https://puma.io]
-gem "puma", "~> 5.0"
+gem "puma"
 
 # Sprockets Rails integration
 # [https://github.com/rails/sprockets-rails]
@@ -31,10 +30,6 @@ gem "importmap-rails", ">= 0.3.4"
 # Bundle and transpile JavaScript in Rails with esbuild, rollup.js, or Webpack.
 # [https://github.com/rails/jsbundling-rails]
 gem "jsbundling-rails"
-
-# Integrate Tailwind CSS with the asset pipeline in Rails.
-# [https://github.com/rails/tailwindcss-rails]
-gem "tailwindcss-rails"
 
 # The speed of a single-page web application without having to write any
 # JavaScript.
@@ -124,6 +119,41 @@ gem "browser"
 # [https://github.com/ruby/net-smtp]
 gem "net-smtp"
 
+# AWS SDK for Ruby - Amazon S3
+# [https://github.com/aws/aws-sdk-ruby]
+gem "aws-sdk-s3", require: false
+
+# High-level wrapper for processing images for the web with ImageMagick or
+# libvips.
+# [https://github.com/janko/image_processing]
+gem "image_processing"
+
+# ActiveStorage blob validator.
+# [https://github.com/aki77/activestorage-validator]
+gem "activestorage-validator"
+
+# Easily define <meta> and <link> tags. I18n support for descriptions, keywords
+# and titles.
+# [https://github.com/fnando/page_meta]
+gem "page_meta"
+
+# Forms made easy!
+# [https://github.com/heartcombo/simple_form]
+gem "simple_form"
+
+# Simple, efficient background processing for Ruby
+# [https://sidekiq.org]
+gem "sidekiq"
+
+# Color is a Ruby library to provide basic RGB, CMYK, HSL, and other colourspace
+# manipulation support to applications that require it
+# [https://github.com/halostatue/color]
+gem "color"
+
+# Calculate rgb color distances using CIEDE2000 formula
+# [https://github.com/hansondr/color_diff]
+gem "color_diff"
+
 group :development, :test do
   # Meta package that requires several pry extensions.
   gem "pry-meta"
@@ -153,6 +183,10 @@ group :development do
   # Process manager for applications with multiple components
   # [http://github.com/ddollar/foreman]
   gem "foreman"
+
+  # Create SVG sprites using SVG links.
+  # [https://github.com/fnando/svg_sprite]
+  gem "svg_sprite"
 end
 
 group :test do
@@ -173,4 +207,14 @@ group :test do
   # Easy download and use of browser drivers.
   # [https://github.com/titusfortner/webdrivers]
   gem "webdrivers"
+
+  # factory_bot provides a framework and DSL for defining and using model
+  # instance factories.
+  # [https://github.com/thoughtbot/factory_bot]
+  gem "factory_bot"
+
+  # Preload factories (Factory Bot) just like fixtures. It will be easier and,
+  # probably, faster!
+  # [http://rubygems.org/gems/factory_bot-preload]
+  gem "factory_bot-preload", require: false
 end

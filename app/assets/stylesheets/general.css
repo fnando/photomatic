@@ -1,0 +1,55 @@
+:root {
+  --logo-color: #0091ff;
+  --accent-color: #0091ff;
+  --heading-gradient-from-color: #741abf;
+  --heading-gradient-to-color: #17a6c5;
+  --home-rect-left: rgba(150, 255, 0, 0.06);
+  --home-rect-right: rgba(0, 145, 255, 0.06);
+
+  --text-color: #424149;
+  --background-color: #fff;
+  --title-color: #0d0c22;
+  --mute-color: #828c93;
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --logo-color: #b3b9f8;
+    --background-color: #2f303a;
+    --heading-gradient-from-color: #a648f3;
+    --heading-gradient-to-color: #00b7ff;
+    --home-rect-left: rgba(98, 54, 255, 0.14);
+    --home-rect-right: rgba(83, 102, 255, 0.14);
+  }
+}
+
+p + p {
+  @apply mt-6;
+}
+
+body {
+  @apply text-lg font-sans text-main-fg bg-main-bg;
+}
+
+.page-title {
+  @apply text-4xl font-bold;
+
+  color: var(--title-color);
+}
+
+.page-description {
+  color: var(--mute-color);
+}
+
+.page-header {
+  @apply pb-5;
+}
+
+.main-content {
+  @apply mx-auto px-10 pb-10 pt-24 max-w-2xl;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+}

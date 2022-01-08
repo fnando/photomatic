@@ -1,13 +1,13 @@
 import { Application } from "@hotwired/stimulus";
 
-import { Hello } from "controllers/hello";
+import { FileUpload } from "controllers/FileUpload";
 
 const application = Application.start();
 
 declare const window: Window &
   typeof globalThis & { Stimulus: typeof application };
 
-application.register("hello", Hello);
+application.register("file-upload", FileUpload);
 
 // Configure Stimulus development experience
 application.debug = true;

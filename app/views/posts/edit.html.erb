@@ -1,0 +1,15 @@
+<%= form_for @post_form, as: :post, url: edit_post_path(@post_form) do |f| %>
+  <%= f.input :description, as: :text %>
+  <%= f.input :show_location, as: :boolean, wrapper: :control_group %>
+  <%= f.input :visibility, as: :select, collection: [
+                [t("simple_form.labels.post.visibility_private"), "private"],
+                [t("simple_form.labels.post.visibility_public"), "public"],
+                [t("simple_form.labels.post.visibility_unlisted"), "unlisted"]
+               ], include_blank: false %>
+  <%= f.input :keywords %>
+
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

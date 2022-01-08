@@ -1,0 +1,20 @@
+---
+en:
+  page_meta:
+    titles:
+      base: "%{value} • Photomatic"
+      login:
+        new: "Sign in to your account"
+
+      posts:
+        new: Post a new photo
+        edit: Edit your photo
+
+    descriptions:
+      login:
+        new: >
+          Type your email below. If you don’t have an account, we’ll create one.
+
+      posts:
+        new: Drag and drop a photo or select a file to start a new post.
+        edit: You‘re almost there. Let’s do this!

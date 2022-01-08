@@ -1,0 +1,11 @@
+.flash-message {
+  @apply p-3 rounded-lg mb-5;
+}
+
+.flash-message.alert {
+  @apply bg-yellow-100 text-orange-700;
+}
+
+.flash-message.success {
+  @apply bg-green-100 text-green-700;
+}

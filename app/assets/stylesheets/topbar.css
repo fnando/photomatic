@@ -1,0 +1,11 @@
+.topbar {
+  @apply fixed top-0 right-0 left-0 bg-white/95 backdrop-blur-sm px-4 py-3 shadow;
+}
+
+.topbar a {
+  @apply inline-block;
+}
+
+.topbar .svg-logo {
+  @apply w-36;
+}

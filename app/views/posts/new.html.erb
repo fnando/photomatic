@@ -1,0 +1,24 @@
+<%= icon :trash %>
+
+<%= form_for @post,
+             url: new_post_path,
+             as: :post,
+             data: {controller: "file-upload"} do |f|
+%>
+  <%= f.hidden_field :description %>
+
+  <label for="post_raw_photo" class="p-10 border-slate-200 rounded-lg border-2 border-dashed block" data-file-upload-target="dropZone">
+    <img data-file-upload-target="preview" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/C/HgAGgwJ/lK3Q6wAAAABJRU5ErkJggg==" alt="">
+  </label>
+
+  <%= f.file_field :raw_photo,
+              direct_upload: true,
+              accept: Photomatic::Config.photo_mime_types.join(","),
+              class: "hidden",
+              data: {"file-upload-target" => "field"} %>
+    <span data-file-upload-target="error" hidden class="field-error">This field has an error</span>
+
+  <p>
+    <%= f.submit data: {"file-upload-target" => "button"} %>
+  </p>
+<% end %>

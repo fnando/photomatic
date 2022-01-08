@@ -1,0 +1,23 @@
+<style type="text/css">
+  body {
+    background: <%= @post.meta["colors"]["light"]["bg"] %>;
+  }
+
+  #photo:before {
+    content: "Loading";
+    color: <%= @post.meta["colors"]["light"]["fg"] %>;
+  }
+</style>
+
+
+<div class="p-10" id="photo">
+  <%= image_tag url_for(@post.large_photo) %>
+</div>
+
+<ul>
+  <% @post.meta["exif"].each do |key, value| %>
+    <li>
+      <strong><%= key.humanize %>:</strong> <%= value %>
+    </li>
+  <% end %>
+</ul>

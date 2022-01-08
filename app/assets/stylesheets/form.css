@@ -1,0 +1,93 @@
+/* Overrides  */
+@layer base {
+  input:not([type="submit"]):focus,
+  textarea:focus,
+  select:focus {
+    --tw-ring-color: var(--accent-color);
+    border-color: var(--tw-ring-color);
+  }
+
+  [type="checkbox"]:checked {
+    color: var(--accent-color);
+  }
+}
+
+/* Specify the submit wrapper style.  */
+form p:last-of-type {
+  @apply border-t-2 border-slate-200 pt-8 mt-8;
+}
+
+/* Text inputs  */
+.input label:after {
+  @apply pb-1 block;
+
+  content: "";
+}
+
+.input label {
+  @apply font-bold;
+}
+
+.input.string input,
+.input select {
+  @apply max-w-md;
+}
+
+.input textarea {
+  @apply resize-none;
+
+  min-height: 10rem;
+}
+
+.input input,
+.input textarea,
+.input select {
+  @apply rounded-lg p-3 w-full border-2 border-slate-300;
+}
+
+/* Checkbox inputs  */
+.input.boolean label {
+  @apply text-base;
+
+  color: var(--mute-color);
+}
+
+.input.boolean input {
+  @apply cursor-pointer w-auto rounded mr-2 p-2;
+}
+
+.input.boolean label:after {
+  @apply hidden;
+}
+
+.input.boolean label {
+  @apply font-normal;
+}
+
+/* Hint  */
+.input .hint {
+  @apply text-base pb-2 -mt-1 block;
+
+  color: var(--mute-color);
+}
+
+/* Error  */
+.field-error {
+  @apply block text-base mt-1 text-yellow-600;
+}
+
+.field-error:before {
+  @apply mr-2 inline-block;
+
+  content: "⚠️";
+}
+
+/* Placeholder */
+::placeholder {
+  color: var(--mute-color);
+}
+
+/* File input  */
+[type="file"] {
+  @apply appearance-none;
+}

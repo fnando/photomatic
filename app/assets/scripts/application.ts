@@ -1,7 +1,10 @@
 import { I18n } from "i18n-js";
+import * as ActiveStorage from "@rails/activestorage";
 
 import translations from "translations.json";
 import "controllers";
+
+ActiveStorage.start();
 
 // Fetch user locale from html#lang.
 // This value is being set on `app/views/layouts/application.html.erb` and

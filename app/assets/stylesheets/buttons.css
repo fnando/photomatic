@@ -1,0 +1,17 @@
+button.primary,
+input.primary {
+  @apply bg-accent
+         cursor-pointer
+         font-bold
+         px-7
+         py-3
+         rounded-lg
+         text-sm
+         text-white
+         uppercase;
+}
+
+button[disabled],
+input[type="submit"][disabled] {
+  @apply bg-slate-400 cursor-default;
+}

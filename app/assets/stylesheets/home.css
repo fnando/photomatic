@@ -1,0 +1,61 @@
+.svg-logo {
+  display: inline-block;
+  max-width: 200px;
+}
+
+.svg-logo svg {
+  width: 100%;
+}
+
+.svg-logo path {
+  fill: var(--logo-color);
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.heading {
+}
+
+.heading:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 5%;
+  border-radius: 0 150px 150px 0;
+  width: 75vw;
+  height: 44vh;
+  background: var(--home-rect-left);
+}
+
+.heading:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  border-radius: 150px 0 0 150px;
+  width: 50vw;
+  top: 20%;
+  height: 44vh;
+  background: var(--home-rect-right);
+}
+
+.heading-gradient {
+  background-image: linear-gradient(
+    to right,
+    var(--heading-gradient-from-color),
+    var(--heading-gradient-to-color)
+  );
+  background-clip: text;
+  color: rgba(0, 0, 0, 0.01);
+  background-size: 200% 100%;
+  animation: 5s gradient infinite;
+}
