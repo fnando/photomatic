@@ -34,8 +34,9 @@ export class FileUpload extends Controller {
     this.subscriptions.forEach((unsubscribe) => unsubscribe());
   }
 
-  handleFileChange(event: InputEvent) {
-    const file = (event.target as HTMLInputElement).files[0];
+  handleFileChange() {
+    const file = this.fieldTarget.files[0];
+    this.fieldTarget.value = "";
 
     this.validate(file);
     this.previewImage(file);

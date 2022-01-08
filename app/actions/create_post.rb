@@ -19,11 +19,13 @@ class CreatePost
   end
 
   def call
-    post.photo.attach(params[:photo])
+    post.raw_photo.attach(params[:raw_photo])
 
     return emit(:error, post) unless post.valid?
 
     post.save!
+
+    ProcessImageWorker.perform_async(post.id)
 
     emit :success, post
   end

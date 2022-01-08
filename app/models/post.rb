@@ -3,11 +3,11 @@
 class Post < ApplicationRecord
   belongs_to :user
 
-  has_one_attached :photo
-  has_one_attached :thumb
-  has_one_attached :large
+  has_one_attached :raw_photo
+  has_one_attached :thumbnail
+  has_one_attached :large_photo
 
-  validates :photo,
+  validates :raw_photo,
             presence: true,
             blob: {
               content_type: Photomatic::Config.photo_mime_types,
