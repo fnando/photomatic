@@ -31,12 +31,15 @@ jobs:
           --health-retries 5
 
     steps:
+      - name: Install image utils
+        run: sudo apt install -yqq imagemagick exiftool
+
       - name: Install PostgreSQL client
         env:
           PGHOST: localhost
           PGUSER: postgres
         run: |
-          sudo apt-get -yqq install libpq-dev
+          sudo apt install -yqq libpq-dev
           psql -U postgres -c "create database test"
 
       - uses: actions/checkout@v1
