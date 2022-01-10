@@ -134,7 +134,7 @@ GEM
     globalid (1.0.0)
       activesupport (>= 5.0)
     haikunate (0.1.1)
-    human_routes (0.0.4)
+    human_routes (0.0.5)
       rails
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
