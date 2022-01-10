@@ -1,0 +1,66 @@
+{
+  "ignored_warnings": [
+    {
+      "warning_type": "Command Injection",
+      "warning_code": 14,
+      "fingerprint": "1e377c3bf6b7fe473a75dc4d418ac6e39fd2ed03c06449bcd0597bd00da60363",
+      "check_name": "Execute",
+      "message": "Possible command injection",
+      "file": "app/actions/process_image.rb",
+      "line": 77,
+      "link": "https://brakemanscanner.org/docs/warning_types/command_injection/",
+      "code": "`#{[\"convert\", image_path, \"-strip\", \"-quality\", quality, \"-scale\", size, \"JPEG:#{Tempfile.new.path}\"].map do\n Shellwords.escape(arg.to_s)\n end.join(\" \")}`",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "ProcessImage",
+        "method": "resize"
+      },
+      "user_input": "[\"convert\", image_path, \"-strip\", \"-quality\", quality, \"-scale\", size, \"JPEG:#{Tempfile.new.path}\"].map do\n Shellwords.escape(arg.to_s)\n end.join(\" \")",
+      "confidence": "Medium",
+      "note": ""
+    },
+    {
+      "warning_type": "Command Injection",
+      "warning_code": 14,
+      "fingerprint": "b1c836c5e1e934d025f380e3e35a7d0b744bf42b7834d9f6cd18362fd1a751bc",
+      "check_name": "Execute",
+      "message": "Possible command injection",
+      "file": "app/actions/process_image.rb",
+      "line": 43,
+      "link": "https://brakemanscanner.org/docs/warning_types/command_injection/",
+      "code": "`#{[\"exiftool\", \"-json\", \"-coordFormat\", \"%+.6f\", raw_path].map do\n Shellwords.escape(arg)\n end.join(\" \")}`",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "ProcessImage",
+        "method": "extract_metadata"
+      },
+      "user_input": "[\"exiftool\", \"-json\", \"-coordFormat\", \"%+.6f\", raw_path].map do\n Shellwords.escape(arg)\n end.join(\" \")",
+      "confidence": "Medium",
+      "note": ""
+    },
+    {
+      "warning_type": "Command Injection",
+      "warning_code": 14,
+      "fingerprint": "ca2b7b57eee1dbcbbc08edfb019634d1abf536af7aac27e3dd4d088b066b1568",
+      "check_name": "Execute",
+      "message": "Possible command injection",
+      "file": "app/models/image_color.rb",
+      "line": 48,
+      "link": "https://brakemanscanner.org/docs/warning_types/command_injection/",
+      "code": "`#{[\"convert\", image_path, \"-scale\", \"250x250\", \"-colors\", \"10\", \"-format\", \"%c\", \"histogram:info:\"].map do\n Shellwords.escape(arg)\n end.join(\" \")}`",
+      "render_path": null,
+      "location": {
+        "type": "method",
+        "class": "ImageColor",
+        "method": "histogram"
+      },
+      "user_input": "[\"convert\", image_path, \"-scale\", \"250x250\", \"-colors\", \"10\", \"-format\", \"%c\", \"histogram:info:\"].map do\n Shellwords.escape(arg)\n end.join(\" \")",
+      "confidence": "Medium",
+      "note": ""
+    }
+  ],
+  "updated": "2022-01-10 09:52:17 -0800",
+  "brakeman_version": "5.2.0"
+}
