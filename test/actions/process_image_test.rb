@@ -5,8 +5,8 @@ require "test_helper"
 class ProcessImageTest < ActiveSupport::TestCase
   let(:post) do
     post = build(:post, user: users(:john))
-    post.photo.attach(filename: "beach.jpg",
-                      io: File.open("./test/fixtures/files/beach.jpg"))
+    post.raw_photo.attach(filename: "beach.jpg",
+                          io: File.open("./test/fixtures/files/beach.jpg"))
     post.tap(&:save!)
   end
 
@@ -15,6 +15,6 @@ class ProcessImageTest < ActiveSupport::TestCase
     post.reload
 
     assert post.thumbnail.attached?
-    assert post.large.attached?
+    assert post.large_photo.attached?
   end
 end

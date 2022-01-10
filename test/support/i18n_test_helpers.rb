@@ -2,7 +2,7 @@
 
 module I18nTestHelpers
   def field(scope)
-    I18n.t(scope, scope: "form.labels")
+    I18n.t(scope, scope: "simple_form.labels")
   end
 
   def button(scope)

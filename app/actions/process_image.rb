@@ -42,7 +42,9 @@ class ProcessImage
 
     payload = `#{cmd}`
 
-    raise "Unable to extract EXIF" if $CHILD_STATUS.exitstatus.nonzero?
+    if $CHILD_STATUS.exitstatus.nonzero?
+      raise "Unable to extract EXIF: #{payload.chomp}"
+    end
 
     Exif.call(JSON.parse(payload).first)
   end
@@ -73,9 +75,11 @@ class ProcessImage
       "JPEG:#{tmp_file}"
     ].map {|arg| Shellwords.escape(arg.to_s) }.join(" ")
 
-    `#{cmd}`
+    result = `#{cmd}`
 
-    raise "Unable to export image" if $CHILD_STATUS.exitstatus.nonzero?
+    if $CHILD_STATUS.exitstatus.nonzero?
+      raise "Unable to export image: #{result.chomp}"
+    end
 
     tmp_file
   end
