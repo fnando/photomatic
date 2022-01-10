@@ -34,7 +34,6 @@ class ImageColor
   def histogram
     @histogram ||= begin
       cmd = [
-        "magick",
         "convert",
         image_path,
         "-scale",
@@ -54,7 +53,7 @@ class ImageColor
 
       result.lines.map do |line|
         parts = line.strip.split
-        hex = parts[2][1..-1][0, 6]
+        hex = parts.find {|part| part.match?(/^#[a-f0-9]{6}$/i) }[1..-1]
 
         Histogram.new(
           parts.first.to_i,

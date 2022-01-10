@@ -64,7 +64,6 @@ class ProcessImage
     tmp_file = Tempfile.new.path
 
     cmd = [
-      "magick",
       "convert",
       image_path,
       "-strip",
