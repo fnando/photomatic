@@ -502,10 +502,10 @@
   resolved "https://registry.yarnpkg.com/@fnando/codestyle/-/codestyle-0.0.13.tgz#b42d5f81a944b547127d5d45fd97975b55ae3f8a"
   integrity sha512-Dqy2QXjjP4M7HQyfDRLeJV5VU567jRRo7KDD85Gq4LIeQjoJ1moa6XlDPKyhWvMYRgQWX4tGpJmQkFr8qvo3FQ==
 
-"@fnando/eslint-config-codestyle@^0.0.9":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@fnando/eslint-config-codestyle/-/eslint-config-codestyle-0.0.9.tgz#0e415a7e884093e3df2d11f07358021b0496be3e"
-  integrity sha512-O6X7PskXqKYAD2ZkJ8L3MBegCVX+xwrdYHyDA5bnwUyZGyBJ2hhdS93bLs1ek9rekV70m7ceBrjwDnQWCQ4uQA==
+"@fnando/eslint-config-codestyle@^0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@fnando/eslint-config-codestyle/-/eslint-config-codestyle-0.0.10.tgz#f7a38203378153234dfd3c9419a27f89b1960d0b"
+  integrity sha512-KB9EAxagxHk/ZdCOhyzVynqlTsF6n3lcSEfYF/KoG62HieK8da5iohEDGG/VKUlvA3x04zDGjRbrDnqlA2baZg==
   dependencies:
     "@fnando/eslint-plugin-consistent-import" "*"
     "@typescript-eslint/eslint-plugin" "*"
