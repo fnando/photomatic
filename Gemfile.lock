@@ -166,7 +166,7 @@ GEM
     mini_magick (4.11.0)
     mini_mime (1.1.2)
     minitest (5.15.0)
-    minitest-utils (0.4.6)
+    minitest-utils (0.4.7)
       minitest
     net-imap (0.2.3)
       digest
@@ -309,7 +309,7 @@ GEM
     superconfig (1.0.0)
     svg_optimizer (0.2.6)
       nokogiri
-    svg_sprite (1.0.1)
+    svg_sprite (1.0.2)
       nokogiri
       svg_optimizer
       thor

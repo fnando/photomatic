@@ -25,6 +25,8 @@ class Exif
   end
 
   def self.process_value(key, value)
+    return if value.nil?
+
     case key
     when :taken_at
       taken_at = value.gsub(

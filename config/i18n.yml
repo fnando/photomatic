@@ -2,7 +2,9 @@
 translations:
   - file: app/assets/scripts/translations.json
     patterns:
-      - "*"
+      - "*.js.*"
+      - "*.actions.*"
+      - "*.number.human.storage_units.*"
       - "!*.activerecord"
       - "!*.errors"
       - "!*.number.nth"
