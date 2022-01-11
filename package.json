@@ -6,7 +6,7 @@
   },
   "dependencies": {
     "@fnando/codestyle": "^0.0.13",
-    "@fnando/eslint-config-codestyle": "^0.0.9",
+    "@fnando/eslint-config-codestyle": "^0.0.10",
     "@hotwired/stimulus": "^3.0.1",
     "@hotwired/turbo-rails": "^7.1.0",
     "@rails/activestorage": "^7.0.1",
