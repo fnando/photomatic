@@ -21,4 +21,15 @@ class AuthTest < ApplicationSystemTestCase
     assert_equal root_path, current_path
     assert_selector "span.username", text: User.last.username
   end
+
+  test "rejects signups with invalid data" do
+    visit root_path
+    click_on t("home.index.create_your_account")
+    fill_in field("login.email"), with: "john@dispostable.com"
+    click_on button("login.create")
+
+    assert_equal login_path, current_path
+    assert_selector ".field-error",
+                    text: t("activemodel.errors.messages.disposable_domain")
+  end
 end

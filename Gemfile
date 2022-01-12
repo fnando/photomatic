@@ -154,6 +154,16 @@ gem "color"
 # [https://github.com/hansondr/color_diff]
 gem "color_diff"
 
+# Add some nice ActiveModel/ActiveRecord validators.
+# [http://rubygems.org/gems/validators]
+gem "validators"
+
+# Extract root domain from hosts (e.g. www.example will be extracted as
+# example.com). It normalizes punycode domains and considers second-level domain
+# names.
+# [https://github.com/fnando/root_domain]
+gem "root_domain"
+
 group :development, :test do
   # Meta package that requires several pry extensions.
   gem "pry-meta"

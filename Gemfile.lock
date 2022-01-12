@@ -122,6 +122,7 @@ GEM
       activerecord (>= 5.0.0)
     digest (3.1.0)
     dotenv (2.7.6)
+    email_data (1641689574.0.0)
     erubi (1.10.0)
     factory_bot (6.2.0)
       activesupport (>= 5.0.0)
@@ -250,6 +251,9 @@ GEM
     redis (4.5.1)
     regexp_parser (2.2.0)
     rexml (3.2.5)
+    root_domain (0.1.2)
+      email_data
+      simpleidn
     rubocop (1.24.1)
       parallel (~> 1.10)
       parser (>= 3.0.0.0)
@@ -289,6 +293,8 @@ GEM
     simple_form (5.1.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
+    simpleidn (0.2.1)
+      unf (~> 0.1.4)
     slop (3.6.0)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
@@ -314,8 +320,12 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.8)
     unicode-display_width (2.1.0)
     url_signature (0.0.2)
+    validators (3.4.1)
     voltage (0.1.0)
     webdrivers (5.0.0)
       nokogiri (~> 1.6)
@@ -365,6 +375,7 @@ DEPENDENCIES
   puma
   rails (~> 7.0.0)
   rails-env
+  root_domain
   rubocop
   rubocop-fnando
   rubocop-performance
@@ -379,6 +390,7 @@ DEPENDENCIES
   svg_sprite
   turbo-rails (>= 0.7.11)
   url_signature
+  validators
   voltage
   webdrivers
 
