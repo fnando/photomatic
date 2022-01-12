@@ -1,0 +1,20 @@
+---
+en:
+  js:
+    posts:
+      new:
+        unsupported_file_type: This file type is not supported.
+        file_is_too_large: The image is too large (limit is 10MB).
+        unable_to_upload_file:
+          The photo could not be uploaded. Please try again.
+
+        drag_or_select_photo: >
+          Drag a photo here or select from your computer
+
+        photo_requirements: >
+          You can send high-res images up to 10MB. Valid formats are PNG, JPG,
+          HEIC and WEBP.
+
+        no_preview: >
+          We couldn’t generate a preview for this image, so we’ll process it
+          later on.

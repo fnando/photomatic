@@ -25,6 +25,7 @@ en:
 
       post:
         description: Description
+        raw_photo: Photo
         show_location: >
           Show photo location (extracted from the photo, limited to city name).
 

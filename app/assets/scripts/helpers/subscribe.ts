@@ -1,5 +1,15 @@
+interface Listenable {
+  addEventListener(
+    type: string,
+    callback: (event: Event) => void | boolean,
+    capture: boolean | AddEventListenerOptions,
+  ): void;
+
+  removeEventListener(type: string, callback: (event: Event) => void): void;
+}
+
 export function subscribe(
-  target: HTMLElement,
+  target: Listenable,
   type: string,
   handler: (event: unknown) => void,
 ) {

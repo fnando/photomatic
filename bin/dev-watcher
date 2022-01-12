@@ -6,6 +6,9 @@ watchman watch-del "$root"
 watchman watch-project "$root"
 watchman trigger-del "$root" rails
 watchman trigger-del "$root" svg_sprite
+watchman trigger-del "$root" seagull
+watchman trigger-del "$root" css
+watchman trigger-del "$root" i18n
 
 watchman -j <<-JSON
 [
@@ -55,6 +58,59 @@ watchman -j <<-JSON
       "--fill",
       "current-color"
     ]
+  }
+]
+JSON
+
+watchman -j <<-JSON
+[
+  "trigger",
+  "$root",
+  {
+    "name": "seagull",
+    "expression": [
+      "anyof",
+      ["match", "app/assets/templates/**/*.sea", "wholename"]
+    ],
+    "command": [
+      "seagull",
+      "compile",
+      "--input",
+      "app/assets/templates/**/*.sea",
+      "--output",
+      "app/assets/scripts/helpers/templates.js"
+    ]
+  }
+]
+JSON
+
+watchman -j <<-JSON
+[
+  "trigger",
+  "$root",
+  {
+    "name": "css",
+    "expression": [
+      "anyof",
+      ["match", "app/assets/stylesheets/**/*.css", "wholename"]
+    ],
+    "command": ["yarn", "build:css"]
+  }
+]
+JSON
+
+watchman -j <<-JSON
+[
+  "trigger",
+  "$root",
+  {
+    "name": "i18n",
+    "expression": [
+      "anyof",
+      ["match", "config/locales/**/*.yml", "wholename"],
+      ["match", "config/i18n.yml", "wholename"]
+    ],
+    "command": ["i18n", "export"]
   }
 ]
 JSON

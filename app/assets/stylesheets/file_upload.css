@@ -1,0 +1,25 @@
+body.dragging {
+  cursor: default;
+}
+
+body.dragging .dropZone {
+  cursor: pointer;
+}
+
+.dropZone img {
+  max-width: 400px;
+  border-radius: 10px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.dropZone .icon--photo {
+  width: 200px;
+  height: 200px;
+}
+
+.photo-wrapper {
+  @apply block text-center mb-2;
+
+  height: 200px;
+}

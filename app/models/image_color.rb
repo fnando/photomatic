@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class ImageColor
+  RGB_HEX_RE = /^#(?<hex>[a-f0-9]{6})(?:[a-f0-9]{2})?$/i
+
   Histogram = Struct.new(:frequency, :color)
 
   class Theme
@@ -53,7 +55,10 @@ class ImageColor
 
       result.lines.map do |line|
         parts = line.strip.split
-        hex = parts.find {|part| part.match?(/^#[a-f0-9]{6}$/i) }[1..-1]
+        matches = parts
+                  .map {|part| part.match(RGB_HEX_RE) }
+                  .find(&:present?)
+        hex = matches&.[](:hex) || "aaaaaa"
 
         Histogram.new(
           parts.first.to_i,

@@ -1,0 +1,57 @@
+<p class="text-center mb-0">
+  <span class="photo-wrapper">
+    {if previewStatus | hasNoPreview}
+      <svg class="text-blue-100 inline-block icon icon--photo">
+        <use href="#icon--photo" role="presentational"></use>
+      </svg>
+    {/if}
+
+    {when previewStatus="ready"}
+        <img alt="Photo Preview" class="inline-block">
+    {/when}
+  </span>
+</p>
+
+<div class="flex flex-col justify-center" style="height: 120px;">
+  {when previewStatus="no-preview"}
+    <p class="mt-0 mb-2 mx-auto text-center w-72 text-mute text-sm">
+      {i18n path="js.posts.new.no_preview"}
+    </p>
+  {/when}
+
+  {unless file}
+    <p class="mt-0 mx-auto text-center w-52 font-bold text-accent text-sm">
+      {i18n path="js.posts.new.drag_or_select_photo"}
+    </p>
+
+    <p class="mt-0 mx-auto text-center w-80 text-mute text-sm">
+      {i18n path="js.posts.new.photo_requirements"}
+    </p>
+  {/unless}
+
+  {if file}
+    <p class="mt-0 mx-auto text-center w-52 font-bold text-slate-600 text-sm">
+      {file.name}
+    </p>
+
+    <p class="mt-0 mx-auto text-center w-52 text-mute text-sm">
+      {file.size | fileSizeFormat}
+    </p>
+
+    <p class="mt-0 mx-auto text-center w-52 text-sm">
+      <button type="button" class="text-orange-600" data-action="click->file-upload#handleRemove">
+        <svg class="inline-block icon icon--trash">
+          <use href="#icon--trash" role="presentational"></use>
+        </svg>
+
+        {i18n path="actions.remove"}
+      </button>
+    </p>
+  {/if}
+
+  {if error}
+    <p class="text-center">
+      <span class="field-error text-sm">{error}</span>
+    </p>
+  {/if}
+</div>
