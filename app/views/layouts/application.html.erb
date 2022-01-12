@@ -12,9 +12,14 @@
 
   <body>
     <%= svg_image_tag(:icons) %>
-    <%= render "top_bar" %>
 
     <div class="main-content">
+      <div class="mb-5">
+        <%= link_to home_path do %>
+          <%= svg_image_tag "logo" %>
+        <% end %>
+      </div>
+
       <%= render "flash_messages" %>
 
       <div class="page-header">
