@@ -129,7 +129,7 @@ GEM
     factory_bot-preload (0.3.0)
       activerecord
       factory_bot
-    ffi (1.15.4)
+    ffi (1.15.5)
     foreman (0.87.2)
     glob (0.2.0)
     globalid (1.0.0)
@@ -152,7 +152,7 @@ GEM
     jmespath (1.4.0)
     jsbundling-rails (1.0.0)
       railties (>= 6.0.0)
-    listen (3.7.0)
+    listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     loofah (2.13.0)
