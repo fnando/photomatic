@@ -107,10 +107,6 @@ gem "actionmailer-markdown"
 # [https://github.com/fnando/i18n-js]
 gem "i18n-js", "~> 4.0.0.alpha1"
 
-# Listen to file modifications
-# [https://github.com/guard/listen]
-gem "listen", require: false
-
 # Do some browser detection with Ruby.
 # [https://github.com/fnando/browser]
 gem "browser"
