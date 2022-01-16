@@ -18,6 +18,12 @@ class GeoLocationTest < ActiveSupport::TestCase
     assert_equal "BC", loc.region
   end
 
+  test "returns nil when one of the coords is unavailable" do
+    assert_nil GeoLocation.call(latitude: nil, longitude: "-1234.56")
+    assert_nil GeoLocation.call(latitude: "48.42", longitude: nil)
+    assert_nil GeoLocation.call(latitude: nil, longitude: nil)
+  end
+
   test "returns nil for invalid coords" do
     stub_request(:get, /api\.positionstack\.com/)
       .to_return(
