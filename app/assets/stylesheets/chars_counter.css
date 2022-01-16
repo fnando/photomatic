@@ -1,0 +1,12 @@
+[data-chars-counter-state] {
+  @apply bg-slate-200 text-slate-500 text-xs inline-block rounded;
+  padding: 1px 6px;
+}
+
+[data-chars-counter-state="warning"] {
+  @apply bg-orange-100 text-orange-500;
+}
+
+[data-chars-counter-state="error"] {
+  @apply bg-red-100 text-red-500;
+}
