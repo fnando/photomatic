@@ -14,4 +14,14 @@ module ApplicationHelper
       content_tag :use, nil, href: "#icon--#{name}"
     end
   end
+
+  def with_attribute(*attrs)
+    return if attrs.any?(&:blank?)
+
+    concat(yield.html_safe) # rubocop:disable Rails/OutputSafety
+  end
+
+  def post_location(post)
+    [post.city, post.region, t(post.country, scope: "countries")].join(", ")
+  end
 end

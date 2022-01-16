@@ -3,6 +3,13 @@
 require "test_helper"
 
 class GeoLocationTest < ActiveSupport::TestCase
+  test "returns hash representation for location" do
+    loc = GeoLocation::Location.new("CAN", "BC", "Vancouver").to_h
+    expected = {country: "CAN", region: "BC", city: "Vancouver"}
+
+    assert_equal expected, loc
+  end
+
   test "returns location" do
     stub_request(:get, /api\.positionstack\.com/)
       .to_return(
