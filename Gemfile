@@ -164,6 +164,11 @@ gem "root_domain"
 # [http://rubygems.org/gems/aitch]
 gem "aitch"
 
+# Sidekiq::Clockwork is a simplistic implementation of a job scheduler based on
+# Clockwork, but without having to run a separated process.
+# [https://github.com/fnando/sidekiq-clockwork]
+gem "sidekiq-clockwork"
+
 group :development, :test do
   # Meta package that requires several pry extensions.
   gem "pry-meta"

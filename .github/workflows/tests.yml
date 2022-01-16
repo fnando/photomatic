@@ -89,6 +89,7 @@ jobs:
         env:
           RAILS_ENV: test
           RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+          POSITION_STACK_API_KEY: "sample-position-stack-api-key"
           DATABASE_URL: postgres:///test
           PGHOST: localhost
           PGUSER: postgres
@@ -100,6 +101,7 @@ jobs:
         env:
           RAILS_ENV: test
           RAILS_MASTER_KEY: ${{ secrets.RAILS_MASTER_KEY }}
+          POSITION_STACK_API_KEY: "sample-position-stack-api-key"
           DATABASE_URL: postgres:///test
           PGHOST: localhost
           PGUSER: postgres
