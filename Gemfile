@@ -160,6 +160,10 @@ gem "validators"
 # [https://github.com/fnando/root_domain]
 gem "root_domain"
 
+# A simple HTTP client
+# [http://rubygems.org/gems/aitch]
+gem "aitch"
+
 group :development, :test do
   # Meta package that requires several pry extensions.
   gem "pry-meta"
@@ -223,4 +227,12 @@ group :test do
   # probably, faster!
   # [http://rubygems.org/gems/factory_bot-preload]
   gem "factory_bot-preload", require: false
+
+  # Library for stubbing HTTP requests in Ruby.
+  # [http://github.com/bblimke/webmock]
+  gem "webmock"
+
+  # Mocking and stubbing library
+  # [https://mocha.jamesmead.org]
+  gem "mocha"
 end
