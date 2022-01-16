@@ -21,6 +21,12 @@ class ProcessImage
       export_images(raw.path)
       metadata = extract_metadata(raw.path)
       theme = ImageColor.extract(raw.path)
+      location = GeoLocation.call(
+        latitude: metadata[:latitude],
+        longitude: metadata[:longitude]
+      )
+
+      post.attributes = location.to_h if location
 
       post.update(
         meta: {

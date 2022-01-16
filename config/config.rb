@@ -21,5 +21,7 @@ module Photomatic
     optional :aws_upload_secret_access_key_id, string, "sample-value"
     optional :aws_upload_bucket, string, "sample-value"
     optional :aws_upload_region, string, "sample-value"
+
+    mandatory :position_stack_api_key, string
   end
 end

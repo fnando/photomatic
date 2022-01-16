@@ -1,0 +1,12 @@
+{
+  "error": {
+    "code": "validation_error",
+    "message": "Request failed with validation error",
+    "context": {
+      "longitude": {
+        "type": "invalid_longitude",
+        "message": "query must have a valid longitude"
+      }
+    }
+  }
+}

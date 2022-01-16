@@ -14,6 +14,12 @@
   <%= image_tag url_for(@post.large_photo) %>
 </div>
 
+<% with_attribute(@post.country, @post.region, @post.city) do %>
+  <p>
+    <%= post_location(@post) %>
+  </p>
+<% end %>
+
 <ul>
   <% @post.meta["exif"].each do |key, value| %>
     <li>
