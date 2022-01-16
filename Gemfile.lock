@@ -308,7 +308,7 @@ GEM
     stimulus-rails (1.0.2)
       railties (>= 6.0.0)
     strscan (3.0.1)
-    superconfig (1.0.0)
+    superconfig (2.1.0)
     svg_optimizer (0.2.6)
       nokogiri
     svg_sprite (1.0.2)

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Photomatic
-  Config = SuperConfig.new do
+  Config = SuperConfig.new(raise_exception: false) do
     credential :encryptor_secret
     credential :auth_code_keyring
     credential :auth_code_digest_salt
