@@ -6,6 +6,7 @@
 @import "./utilities.css";
 @import "./flash_messages.css";
 @import "./file_upload.css";
+@import "./chars_counter.css";
 
 @tailwind base;
 @tailwind components;
