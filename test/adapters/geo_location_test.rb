@@ -3,6 +3,14 @@
 require "test_helper"
 
 class GeoLocationTest < ActiveSupport::TestCase
+  setup do
+    GeoLocation.adapter = GeoLocation::PositionStack
+  end
+
+  teardown do
+    GeoLocation.adapter = GeoLocation::Development
+  end
+
   test "returns hash representation for location" do
     loc = GeoLocation::Location.new("CAN", "BC", "Vancouver").to_h
     expected = {country: "CAN", region: "BC", city: "Vancouver"}
