@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class LoginController < ApplicationController
-  before_action :redirect_logged_user
+  before_action :redirect_logged_user, except: %i[destroy]
 
   def new
     @login_form = LoginForm.new
@@ -19,6 +19,11 @@ class LoginController < ApplicationController
         render :new
       end
     end
+  end
+
+  def destroy
+    reset_session
+    redirect_to home_path
   end
 
   def check_inbox

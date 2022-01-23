@@ -10,6 +10,8 @@
       <div class="absolute top-0 right-0">
         <span class="username"><%= current_user.username %></span>
         <%= link_to t(".add_post"), new_post_path %>
+
+        <%= button_to t("actions.logout"), logout_path %>
       </div>
     <% else %>
       <%= link_to t(".create_your_account"), login_path, class: "relative rounded-full bg-blue-500 px-5 py-2 text-white font-bold uppercase text-xs" %>
