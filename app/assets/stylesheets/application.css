@@ -8,6 +8,7 @@
 @import "./flash_messages.css";
 @import "./file_upload.css";
 @import "./chars_counter.css";
+@import "./avatar.css";
 
 @tailwind base;
 @tailwind components;

@@ -1,0 +1,11 @@
+---
+en:
+  application:
+    menu:
+      user_photo_alt: >
+        %{username} photo
+
+      add_post: Add post
+      settings: Settings
+      send_feedback: Send feedback
+      logout: Log out
