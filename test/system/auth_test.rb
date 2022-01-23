@@ -11,7 +11,8 @@ class AuthTest < ApplicationSystemTestCase
     fill_in field("login.email"), with: "john@photomatic.app"
     click_on button("login.create")
 
-    assert_selector "p", text: t("login.check_inbox.check_your_inbox")
+    assert_selector "p", text: page_title("login.check_inbox")
+    assert_equal check_inbox_path, current_path
 
     perform_enqueued_jobs
 
@@ -19,7 +20,6 @@ class AuthTest < ApplicationSystemTestCase
     click_email_link(0)
 
     assert_equal root_path, current_path
-    assert_selector "span.username", text: User.last.username
   end
 
   test "rejects signups with invalid data" do

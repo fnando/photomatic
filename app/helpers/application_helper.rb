@@ -24,4 +24,12 @@ module ApplicationHelper
   def post_location(post)
     [post.city, post.region, t(post.country, scope: "countries")].join(", ")
   end
+
+  def gravatar(email, size: 50, **kwargs)
+    email_digest = Digest::MD5.hexdigest(email.to_s)
+    image_tag "https://gravatar.com/avatar/#{email_digest}?s=#{size * 2}",
+              **kwargs,
+              class: "avatar",
+              style: "width: #{size}px; height: #{size}px;"
+  end
 end

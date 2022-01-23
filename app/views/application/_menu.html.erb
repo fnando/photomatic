@@ -1,0 +1,57 @@
+<nav class="absolute top-0 right-0 m-2">
+  <% if user_logged_in? %>
+    <div data-controller="menu" class="flex flex-row items-center">
+      <%= link_to t(".explore"), home_path, class: "text-sm mr-4" %>
+
+      <%= link_to new_post_path, class: "text-sm mr-4" do %>
+        <%= icon(:plus_square) %>
+        <%= t(".add_post") %>
+      <% end %>
+
+      <button type="button" data-menu-target="button" data-action="click->menu#handleClick">
+        <%= gravatar current_user.email,
+                     alt: t(".user_photo_alt", username: current_user.username) %>
+      </button>
+
+      <ul class="menu" hidden data-menu-target="menu">
+        <li class="menu-item">
+          <%= link_to home_path, class: "menu-action" do %>
+            <%= icon :gear %>
+            <%= t(".settings") %>
+          <% end %>
+
+        </li>
+        <li class="menu-item">
+          <%= link_to home_path, class: "menu-action" do %>
+            <%= icon :bubble_exclamation %>
+            <%= t(".send_feedback") %>
+          <% end %>
+
+        </li>
+        <li class="menu-item with-separator">
+          <%= button_to logout_path, class: "menu-action" do %>
+            <%= icon :close %>
+            <%= t("actions.logout") %>
+          <% end %>
+
+        </li>
+      </ul>
+    </div>
+  <% else %>
+    <ul class="flex flex-row text-xs uppercase font-bold text-slate-500 p-3">
+      <li>
+        <%= link_to t(".home"), home_path %>
+      </li>
+
+      <li class="ml-4">
+        <%= link_to t(".explore"), home_path %>
+      </li>
+
+      <li class="ml-4">
+        <%= link_to t(".join_photomatic"),
+            login_path,
+            class: "text-accent" %>
+      </li>
+    </ul>
+  <% end %>
+</nav>
