@@ -127,6 +127,7 @@ GEM
     digest (3.1.0)
     dotenv (2.7.6)
     email_data (1641689574.0.0)
+    email_provider_info (0.0.1)
     erubi (1.10.0)
     factory_bot (6.2.0)
       activesupport (>= 5.0.0)
@@ -364,6 +365,7 @@ DEPENDENCIES
   color_diff
   defaults
   dotenv
+  email_provider_info
   factory_bot
   factory_bot-preload
   foreman

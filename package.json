@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "@fnando/codestyle": "^0.0.13",
+    "@fnando/email-provider-info": "^0.0.3",
     "@fnando/eslint-config-codestyle": "^0.0.10",
     "@fnando/seagull": "^0.0.5",
     "@hotwired/stimulus": "^3.0.1",

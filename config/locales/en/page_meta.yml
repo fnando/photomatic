@@ -4,7 +4,8 @@ en:
     titles:
       base: "%{value} • Photomatic"
       login:
-        new: "Sign in to your account"
+        new: Sign in to your account
+        check_inbox: Check your email
 
       posts:
         new: Post a new photo
@@ -14,6 +15,8 @@ en:
       login:
         new: >
           Type your email below. If you don’t have an account, we’ll create one.
+        check_inbox: >
+          Please check your email and click the link we just sent.
 
       posts:
         new: Drag and drop a photo or select a file to start a new post.

@@ -1,3 +1,15 @@
-<p>
-  <%= t(".check_your_inbox") %>
+<p class="text-sm text-amber-700">
+  <%= icon :info %>
+  <%= t(".check_junk_folder") %>
+</p>
+
+<p class="action-group">
+  <%= link_to t(".resend_email"), login_path, class: "button primary" %>
+
+
+  <% if (provider = EmailProviderInfo.call(session[:login_email])) %>
+    <%= link_to t(".go_to_email", provider: provider.name),
+                provider.url,
+                class: "button secondary" %>
+  <% end %>
 </p>

@@ -14,7 +14,7 @@
 
 /* Specify the submit wrapper style. */
 form > p:last-of-type {
-  @apply border-t-2 border-slate-200 pt-8 mt-8;
+  @apply action-group;
 }
 
 /* Text inputs  */

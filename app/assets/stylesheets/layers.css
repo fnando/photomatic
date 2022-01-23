@@ -1,0 +1,5 @@
+@layer base {
+  .action-group {
+    @apply border-t-2 border-slate-200 pt-8 mt-8;
+  }
+}
