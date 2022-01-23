@@ -169,6 +169,8 @@ gem "aitch"
 # [https://github.com/fnando/sidekiq-clockwork]
 gem "sidekiq-clockwork"
 
+gem "email_provider_info"
+
 group :development, :test do
   # Meta package that requires several pry extensions.
   gem "pry-meta"

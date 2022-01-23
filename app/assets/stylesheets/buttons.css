@@ -1,5 +1,4 @@
-button.primary,
-input.primary {
+.button.primary {
   @apply bg-accent
          cursor-pointer
          font-bold
@@ -8,10 +7,30 @@ input.primary {
          rounded-lg
          text-sm
          text-white
-         uppercase;
+         uppercase
+         inline-block;
+}
+
+.button.secondary {
+  @apply bg-white
+         cursor-pointer
+         font-bold
+         px-7
+         py-3
+         rounded-lg
+         text-sm
+         text-accent
+         border-2
+         border-accent
+         uppercase
+         inline-block;
 }
 
 button[disabled],
-input[type="submit"][disabled] {
+input[type="submit"][disabled] input[type="button"][disabled] {
   @apply bg-slate-400 cursor-default;
+}
+
+.button + .button {
+  @apply ml-3;
 }

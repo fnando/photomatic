@@ -203,7 +203,7 @@ ActionView::Base.field_error_proc = ->(html_tag, _instance) { html_tag.to_s }
 
 module SimpleFormExtensions
   def submit(*args, **options)
-    super(*args, **{class: "primary"}.merge(options))
+    super(*args, **{class: "button primary"}.merge(options))
   end
 end
 

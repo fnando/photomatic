@@ -2,4 +2,8 @@
 en:
   login:
     check_inbox:
-      check_your_inbox: Please check your email and click the link we just sent.
+      check_junk_folder: >
+        Didn’t receive the email? Check your email’s junk folder.
+
+      go_to_email: >
+        Go to %{provider}

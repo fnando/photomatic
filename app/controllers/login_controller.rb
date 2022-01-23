@@ -2,6 +2,7 @@
 
 class LoginController < ApplicationController
   before_action :redirect_logged_user, except: %i[destroy]
+  before_action :redirect_check_inbox_without_email, only: %i[check_inbox]
 
   def new
     @login_form = LoginForm.new
@@ -12,6 +13,7 @@ class LoginController < ApplicationController
 
     LogIn.call(@login_form) do |action|
       action.on(:success) do
+        session[:login_email] = @login_form.email
         redirect_to check_inbox_path
       end
 
@@ -54,5 +56,9 @@ class LoginController < ApplicationController
 
   private def login_params
     params.require(:login).permit(:email)
+  end
+
+  private def redirect_check_inbox_without_email
+    redirect_to login_path unless session[:login_email]
   end
 end
