@@ -169,6 +169,8 @@ gem "aitch"
 # [https://github.com/fnando/sidekiq-clockwork]
 gem "sidekiq-clockwork"
 
+# Find email provider service based on the email address.
+# [https://github.com/fnando/email-provider-info]
 gem "email_provider_info"
 
 group :development, :test do
