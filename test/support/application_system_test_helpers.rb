@@ -10,4 +10,8 @@ module ApplicationSystemTestHelpers
 
     visit link["href"]
   end
+
+  def page_title(scope)
+    I18n.t(scope, scope: "page_meta.titles")
+  end
 end
