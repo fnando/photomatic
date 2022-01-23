@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="<%= browser.accept_language.first.code %>">
+<html lang="<%= I18n.locale %>">
   <head>
-    <title>Photomatic</title>
+    <%= page_meta %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 

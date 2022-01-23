@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     get :verify_email
   end
 
+  post "logout" => "login#destroy"
+
   route :posts do
     create
     update
