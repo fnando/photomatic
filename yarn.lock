@@ -502,6 +502,11 @@
   resolved "https://registry.yarnpkg.com/@fnando/codestyle/-/codestyle-0.0.13.tgz#b42d5f81a944b547127d5d45fd97975b55ae3f8a"
   integrity sha512-Dqy2QXjjP4M7HQyfDRLeJV5VU567jRRo7KDD85Gq4LIeQjoJ1moa6XlDPKyhWvMYRgQWX4tGpJmQkFr8qvo3FQ==
 
+"@fnando/email-provider-info@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@fnando/email-provider-info/-/email-provider-info-0.0.3.tgz#ca54f1ea62436f60591ed51038a60ce89ea63e97"
+  integrity sha512-1A0JqWPmqpeNXyDYrQD0IOsBnguK8WB+/qQQP51pS0WhMsjhfFq/voPFLnY9FJI/d/j9zED6fAqvIl1IzRYVWQ==
+
 "@fnando/eslint-config-codestyle@^0.0.10":
   version "0.0.10"
   resolved "https://registry.yarnpkg.com/@fnando/eslint-config-codestyle/-/eslint-config-codestyle-0.0.10.tgz#f7a38203378153234dfd3c9419a27f89b1960d0b"
