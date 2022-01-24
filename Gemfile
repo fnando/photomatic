@@ -171,7 +171,7 @@ gem "sidekiq-clockwork"
 
 # Find email provider service based on the email address.
 # [https://github.com/fnando/email-provider-info]
-gem "email_provider_info"
+gem "email-provider-info"
 
 group :development, :test do
   # Meta package that requires several pry extensions.
