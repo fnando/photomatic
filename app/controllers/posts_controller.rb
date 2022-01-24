@@ -1,10 +1,13 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  before_action :require_logged_user
+  before_action :require_logged_user, except: %i[show]
 
   def show
-    @post = current_user.posts.find(params[:id])
+    @post = Post.find(params[:id])
+    @view_object = PostViewObject.new(@post)
+
+    render layout: "photo"
   end
 
   def new

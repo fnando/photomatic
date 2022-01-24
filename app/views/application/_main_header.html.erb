@@ -1,9 +1,9 @@
-<nav class="absolute top-0 right-0 m-2">
+<nav class="main-header absolute left-0 top-0 right-0 p-2 flex">
   <% if user_logged_in? %>
-    <div data-controller="menu" class="flex flex-row items-center">
-      <%= link_to t(".explore"), home_path, class: "text-sm mr-4" %>
+    <div data-controller="menu" class="flex flex-row items-center ml-auto">
+      <%= link_to t(".explore"), home_path, class: "text-base mr-4" %>
 
-      <%= link_to new_post_path, class: "text-sm mr-4" do %>
+      <%= link_to new_post_path, class: "text-base mr-4" do %>
         <%= icon(:plus_square) %>
         <%= t(".add_post") %>
       <% end %>
@@ -31,14 +31,14 @@
         <li class="menu-item with-separator">
           <%= button_to logout_path, class: "menu-action" do %>
             <%= icon :close %>
-            <%= t("actions.logout") %>
+            <%= t(".logout") %>
           <% end %>
 
         </li>
       </ul>
     </div>
   <% else %>
-    <ul class="flex flex-row text-xs uppercase font-bold text-slate-500 p-3">
+    <ul class="flex flex-row text-base uppercase font-bold text-slate-500 p-3">
       <li>
         <%= link_to t(".home"), home_path %>
       </li>

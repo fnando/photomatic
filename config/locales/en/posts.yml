@@ -18,3 +18,8 @@ en:
         no_preview: >
           We couldn’t generate a preview for this image, so we’ll process it
           later on.
+
+  posts:
+    show:
+      uploaded: >
+        Uploaded %{time} ago

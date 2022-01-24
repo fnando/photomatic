@@ -8,6 +8,7 @@ module Photomatic
     credential :user_keyring
     credential :user_digest_salt
     credential :signed_url_secret
+    credential :position_stack_api_key
     optional :app_host, string, "example.com"
     optional :force_ssl, bool, true
     optional :default_email_sender, string, "hi@example.com"
@@ -21,7 +22,5 @@ module Photomatic
     optional :aws_upload_secret_access_key_id, string, "sample-value"
     optional :aws_upload_bucket, string, "sample-value"
     optional :aws_upload_region, string, "sample-value"
-
-    mandatory :position_stack_api_key, string
   end
 end

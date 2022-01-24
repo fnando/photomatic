@@ -6,6 +6,8 @@ class CreateUsers < ActiveRecord::Migration[7.0]
     enable_extension "citext"
 
     create_table :users do |t|
+      t.text :display_name, null: false
+      t.text :bio, null: false, default: ""
       t.citext :username, null: false, size: 35
       t.binary :encrypted_email, null: false
       t.text :email_digest, null: false

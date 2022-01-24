@@ -10,11 +10,11 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body>
-    <main>
-      <%= svg_image_tag(:icons) %>
-      <%= render "main_header" %>
+  <body data-page-id="<%= page_id %>">
+    <%= svg_image_tag(:icons) %>
+
+    <div class="main-content">
       <%= yield %>
-    </main>
+    </div>
   </body>
 </html>

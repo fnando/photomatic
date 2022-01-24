@@ -1,0 +1,73 @@
+@keyframes menu-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes menu-fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.menu.menu-closing {
+  animation: 0.5s menu-fade-out forwards;
+}
+
+.menu {
+  @apply absolute
+         right-0
+         top-16
+         mr-2
+         bg-white
+         border
+         py-3
+         block
+         z-50
+         rounded
+         shadow
+         w-52
+         text-base;
+
+  animation: 0.5s menu-fade-in forwards;
+}
+
+.menu > .menu-item {
+  @apply whitespace-nowrap;
+}
+
+.menu > .menu-item + .menu-item {
+  @apply mt-1;
+}
+
+.menu .icon {
+  @apply mr-1;
+  width: 13px;
+  height: 13px;
+}
+
+.menu > .menu-item .menu-action {
+  @apply px-3
+         py-1
+         block
+         w-full
+         text-left;
+}
+
+.menu > .menu-item .menu-action:hover {
+  @apply bg-accent
+         text-white;
+  font-size: inherit;
+}
+
+.menu .with-separator:before {
+  @apply border-t block mx-3 my-2;
+  content: "";
+  height: 1px;
+}

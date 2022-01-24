@@ -10,6 +10,16 @@ svg_sprite generate --input app/assets/images/icons --sprite-path app/assets/ima
   height: 16px;
 }
 
+.icon--calendar {
+  width: 16px;
+  height: 16px;
+}
+
+.icon--camera {
+  width: 16px;
+  height: 16px;
+}
+
 .icon--close {
   width: 16px;
   height: 16px;
@@ -25,7 +35,17 @@ svg_sprite generate --input app/assets/images/icons --sprite-path app/assets/ima
   height: 16px;
 }
 
+.icon--lens {
+  width: 16px;
+  height: 16px;
+}
+
 .icon--photo {
+  width: 16px;
+  height: 16px;
+}
+
+.icon--pin {
   width: 16px;
   height: 16px;
 }

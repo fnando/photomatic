@@ -11,4 +11,8 @@ class User < ApplicationRecord
                        end
                      }
   has_many :posts, dependent: :restrict_with_exception
+
+  def to_param
+    username
+  end
 end
