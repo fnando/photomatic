@@ -27,7 +27,8 @@
 }
 
 button[disabled],
-input[type="submit"][disabled] input[type="button"][disabled] {
+input[type="submit"][disabled],
+input[type="button"][disabled] {
   @apply bg-slate-400 cursor-default;
 }
 
