@@ -8,7 +8,7 @@
   height: 100vh;
 }
 
-[data-page-id="post-show"] .photo-wrapper {
+[data-page-id="posts-show"] .photo-wrapper {
   width: calc(100% - var(--photo-sidebar-width));
   height: 100vh;
 }
