@@ -29,6 +29,8 @@ p + p {
 
 body {
   @apply text-lg font-sans text-main-fg bg-main-bg;
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
 .page-title {
@@ -46,7 +48,7 @@ body {
 }
 
 .main-content {
-  @apply mx-auto px-10 pb-10 pt-10 max-w-2xl;
+  @apply mx-auto px-10 pb-10 pt-20 max-w-2xl;
 }
 
 .icon {

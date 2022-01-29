@@ -1,5 +1,5 @@
 :root {
-  --photo-sidebar-width: 400px;
+  --photo-sidebar-width: 350px;
 }
 
 [data-page-id="posts-show"] .main-content {
@@ -8,9 +8,17 @@
   height: 100vh;
 }
 
+[data-page-id="post-show"] .photo-wrapper {
+  width: calc(100% - var(--photo-sidebar-width));
+  height: 100vh;
+}
+
 [data-page-id="posts-show"] .photo-sidebar {
   @apply bg-white p-3;
   width: var(--photo-sidebar-width);
+  height: 100vh;
+  overflow: auto;
+  flex-shrink: 0;
 }
 
 [data-page-id="posts-show"] #photo {

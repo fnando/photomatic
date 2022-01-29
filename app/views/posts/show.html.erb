@@ -9,10 +9,12 @@
   }*/
 </style>
 
-<%= image_tag url_for(@view_object.large_photo),
-              id: "photo",
-              width: @view_object.photo_width,
-              height: @view_object.photo_height %>
+<div class="photo-wrapper">
+  <%= image_tag url_for(@view_object.large_photo),
+      id: "photo",
+      width: @view_object.photo_width,
+      height: @view_object.photo_height %>
+</div>
 
 <div class="photo-sidebar">
   <div class="user-info flex flex-row items-center mb-3">
