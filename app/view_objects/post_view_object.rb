@@ -41,6 +41,8 @@ class PostViewObject < Burgundy::Item
 
   def photo_taken_at
     return unless item.meta["exif"]["taken_at"]
+
+    I18n.l(Time.zone.parse(item.meta["exif"]["taken_at"]))
   end
 
   def shutter_speed
