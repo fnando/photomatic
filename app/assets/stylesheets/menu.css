@@ -28,7 +28,6 @@
          bg-white
          border
          py-3
-         block
          z-50
          rounded
          shadow
@@ -57,7 +56,9 @@
          py-1
          block
          w-full
-         text-left;
+         text-left
+         text-inherit
+         no-underline;
 }
 
 .menu > .menu-item .menu-action:hover {
@@ -70,4 +71,18 @@
   @apply border-t block mx-3 my-2;
   content: "";
   height: 1px;
+}
+
+.main-nav {
+  @apply flex
+         flex-row
+         text-base
+         uppercase
+         font-bold
+         text-slate-500
+         p-3;
+}
+
+.main-nav a {
+  @apply no-underline text-inherit;
 }

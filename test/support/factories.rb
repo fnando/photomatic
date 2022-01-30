@@ -8,9 +8,18 @@ FactoryBot.define do
 
   factory :post do
     association :user
+
+    after(:build) do |record|
+      record.raw_photo.attach(
+        io: Rails.root.join("test/fixtures/files/beach.jpg").open,
+        filename: "beach.jpg",
+        content_type: "image/jpeg"
+      )
+    end
   end
 
   preload do
-    factory(:john) { create(:user) }
+    factory(:default) { create(:user) }
+    factory(:default) { create(:post, user: users(:default)) }
   end
 end

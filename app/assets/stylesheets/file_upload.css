@@ -13,11 +13,6 @@ body.dragging .dropZone {
   object-fit: cover;
 }
 
-.dropZone .icon--photo {
-  width: 200px;
-  height: 200px;
-}
-
 .preview-wrapper {
   @apply block text-center mb-2;
 

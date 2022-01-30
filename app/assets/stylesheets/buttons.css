@@ -1,29 +1,24 @@
-.button.primary {
-  @apply bg-accent
+.button {
+  @apply no-underline
          cursor-pointer
          font-bold
          px-7
          py-3
          rounded-lg
          text-sm
-         text-white
          uppercase
          inline-block;
 }
 
+.button.primary {
+  @apply bg-accent text-white;
+}
+
 .button.secondary {
   @apply bg-white
-         cursor-pointer
-         font-bold
-         px-7
-         py-3
-         rounded-lg
-         text-sm
          text-accent
          border-2
-         border-accent
-         uppercase
-         inline-block;
+         border-accent;
 }
 
 button[disabled],
