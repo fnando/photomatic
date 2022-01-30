@@ -9,8 +9,15 @@
 }
 
 [data-page-id="posts-show"] .photo-wrapper {
+  @apply relative;
+
   width: calc(100% - var(--photo-sidebar-width));
   height: 100vh;
+}
+
+[data-page-id="posts-show"] .photo-wrapper:after {
+  @apply absolute inset-0;
+  content: "";
 }
 
 [data-page-id="posts-show"] .photo-sidebar {

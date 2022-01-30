@@ -28,7 +28,6 @@
          bg-white
          border
          py-3
-         block
          z-50
          rounded
          shadow
@@ -57,7 +56,9 @@
          py-1
          block
          w-full
-         text-left;
+         text-left
+         text-inherit
+         no-underline;
 }
 
 .menu > .menu-item .menu-action:hover {
