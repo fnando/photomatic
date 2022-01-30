@@ -11,12 +11,11 @@ class AuthTest < ApplicationSystemTestCase
     fill_in field("login.email"), with: "john@photomatic.app"
     click_on button("login.create")
 
-    assert_selector "p", text: page_title("login.check_inbox")
     assert_equal check_inbox_path, current_path
+    assert_selector "p", text: page_title("login.check_inbox")
 
     perform_enqueued_jobs
 
-    I18n.t("verify_your_email")
     click_email_link(0)
 
     assert_equal root_path, current_path

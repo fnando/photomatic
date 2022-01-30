@@ -19,7 +19,7 @@ FactoryBot.define do
   end
 
   preload do
-    factory(:john) { create(:user) }
-    factory(:default) { create(:post, user: users(:john)) }
+    factory(:default) { create(:user) }
+    factory(:default) { create(:post, user: users(:default)) }
   end
 end

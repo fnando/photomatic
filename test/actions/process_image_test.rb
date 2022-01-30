@@ -4,7 +4,7 @@ require "test_helper"
 
 class ProcessImageTest < ActiveSupport::TestCase
   let(:post) do
-    post = build(:post, user: users(:john))
+    post = build(:post, user: users(:default))
     post.raw_photo.attach(filename: "beach.jpg",
                           io: File.open("./test/fixtures/files/beach.jpg"))
     post.tap(&:save!)

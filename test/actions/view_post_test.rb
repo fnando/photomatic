@@ -20,7 +20,7 @@ class ViewPostTest < ActiveSupport::TestCase
     unauthorized = Callable.new
     success = Callable.new
 
-    ViewPost.call(users(:john), posts(:default).id) do |action|
+    ViewPost.call(users(:default), posts(:default).id) do |action|
       action.on(:unauthorized, &unauthorized)
       action.on(:success, &success)
     end
