@@ -9,3 +9,7 @@ AllCops:
 
 Metrics:
   Enabled: false
+
+Style/OpenStructUse:
+  Exclude:
+    - test/**/*.rb
