@@ -21,6 +21,6 @@ Rails.application.routes.draw do
     show
   end
 
-  post "posts/:id/like" => "likes#create", as: :like_post
-  delete "posts/:id/like" => "likes#delete"
+  post "posts/:id/like" => "likes#create", as: :like_post, format: false
+  delete "posts/:id/like" => "likes#delete", format: false
 end
