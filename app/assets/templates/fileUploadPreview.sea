@@ -1,7 +1,7 @@
 <p class="text-center mb-0">
   <span class="preview-wrapper">
     {if previewStatus | hasNoPreview}
-      <svg class="text-blue-100 inline-block icon icon--photo">
+      <svg class="text-blue-100 inline-block icon xl">
         <use href="#icon--photo" role="presentational"></use>
       </svg>
     {/if}

@@ -23,3 +23,8 @@ en:
     show:
       uploaded: >
         Uploaded %{time} ago
+
+    unauthorized:
+      photo_is_unavailable: Photo is unavailable
+      no_permission: Looks like you don’t have permission to see this photo.
+      logging_in_html: If you’re the owner, try <a href="%{url}">logging in</a>.

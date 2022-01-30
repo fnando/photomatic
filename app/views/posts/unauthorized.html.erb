@@ -1,0 +1,19 @@
+<div class="text-center w-full">
+  <%= icon :photo, class: "icon xl text-blue-100" %>
+
+  <h2 class="text-2xl font-bold"><%= t(".photo_is_unavailable") %></h2>
+
+  <p class="w-72 mx-auto">
+    <%= t(".no_permission") %>
+  </p>
+
+  <% unless user_logged_in? %>
+    <p>
+      <%= t(".logging_in_html", url: login_path) %>
+    </p>
+  <% end %>
+
+  <p>
+    <%= link_to t("actions.go_back"), root_path, class: "button secondary" %>
+  </p>
+</div>

@@ -4,10 +4,16 @@ class PostsController < ApplicationController
   before_action :require_logged_user, except: %i[show]
 
   def show
-    @post = Post.find(params[:id])
-    @view_object = PostViewObject.new(@post)
+    ViewPost.call(current_user, params[:id]) do |action|
+      action.on(:unauthorized) do
+        render :unauthorized, status: :unauthorized
+      end
 
-    render layout: "photo"
+      action.on(:success) do |post|
+        @view_object = PostViewObject.new(post)
+        render layout: "photo"
+      end
+    end
   end
 
   def new

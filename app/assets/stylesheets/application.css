@@ -1,3 +1,4 @@
+@import "./extensions.css";
 @import "./layers.css";
 @import "./general.css";
 @import "./buttons.css";
@@ -11,7 +12,3 @@
 @import "./avatar.css";
 @import "./posts_show.css";
 @import "./menu.css";
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;

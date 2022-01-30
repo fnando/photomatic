@@ -71,3 +71,17 @@
   content: "";
   height: 1px;
 }
+
+.main-nav {
+  @apply flex
+         flex-row
+         text-base
+         uppercase
+         font-bold
+         text-slate-500
+         p-3;
+}
+
+.main-nav a {
+  @apply no-underline text-inherit;
+}
