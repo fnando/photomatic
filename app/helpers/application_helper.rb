@@ -9,16 +9,10 @@ module ApplicationHelper
     end
   end
 
-  def icon(name)
-    content_tag :svg, class: "icon icon--#{name}" do
+  def icon(name, **kwargs)
+    content_tag :svg, class: "icon icon--#{name}", **kwargs do
       content_tag :use, nil, href: "#icon--#{name}"
     end
-  end
-
-  def with_attribute(*attrs)
-    return if attrs.any?(&:blank?)
-
-    concat(yield.html_safe) # rubocop:disable Rails/OutputSafety
   end
 
   def post_location(post)
@@ -31,5 +25,15 @@ module ApplicationHelper
               **kwargs,
               class: "avatar",
               style: "width: #{size}px; height: #{size}px;"
+  end
+
+  def style(**kwargs)
+    kwargs
+      .map {|key, value| [key.to_s.tr("_", "-"), value].join(": ") }
+      .join("; ")
+  end
+
+  def page_id
+    [controller.controller_name, controller.action_name].join("-")
   end
 end

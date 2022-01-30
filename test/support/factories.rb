@@ -2,6 +2,7 @@
 
 FactoryBot.define do
   factory :user do
+    display_name { "john" }
     sequence(:email) {|n| "#{n}@photomatic.app" }
   end
 

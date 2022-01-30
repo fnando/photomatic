@@ -18,7 +18,7 @@ body.dragging .dropZone {
   height: 200px;
 }
 
-.photo-wrapper {
+.preview-wrapper {
   @apply block text-center mb-2;
 
   height: 200px;

@@ -173,6 +173,10 @@ gem "sidekiq-clockwork"
 # [https://github.com/fnando/email-provider-info]
 gem "email-provider-info"
 
+# A simple wrapper for objects in less than 100 lines.
+# [http://github.com/fnando/burgundy]
+gem "burgundy"
+
 group :development, :test do
   # Meta package that requires several pry extensions.
   gem "pry-meta"

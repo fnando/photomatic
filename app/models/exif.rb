@@ -2,24 +2,26 @@
 
 class Exif
   ATTRIBUTES = {
-    "DateTimeOriginal" => :taken_at,
-    "Make" => :make,
-    "LensID" => :lens,
-    "Model" => :model,
-    "ImageWidth" => :width,
-    "ImageHeight" => :height,
-    "Aperture" => :aperture,
-    "GPSLatitude" => :latitude,
-    "GPSLongitude" => :longitude,
-    "ShutterSpeed" => :shutter_speed,
-    "Flash" => :flash,
-    "ISO" => :iso,
-    "FNumber" => :fstop,
-    "FocalLengthIn35mmFormat" => :focal_length
+    taken_at: %w[DateTimeOriginal DateTimeCreated DateCreated],
+    make: ["Make"],
+    lens: %w[LensModel LensInfo Lens LensID],
+    lens_make: ["LensMake"],
+    model: ["Model"],
+    width: ["ImageWidth"],
+    height: ["ImageHeight"],
+    aperture: ["Aperture"],
+    latitude: ["GPSLatitude"],
+    longitude: ["GPSLongitude"],
+    shutter_speed: ["ShutterSpeed"],
+    flash: ["Flash"],
+    iso: ["ISO"],
+    fstop: ["FNumber"],
+    focal_length: ["FocalLengthIn35mmFormat"]
   }.freeze
 
   def self.call(payload)
-    ATTRIBUTES.each_with_object({}) do |(from, to), buffer|
+    ATTRIBUTES.each_with_object({}) do |(to, from_choices), buffer|
+      from = from_choices.find {|choice| payload[choice] }
       buffer[to] = process_value(to, payload[from])
     end
   end

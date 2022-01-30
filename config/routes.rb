@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   end
 
   post "logout" => "login#destroy"
+  get "u/:username" => "profile#show",
+      as: :profile
 
   route :posts do
     create

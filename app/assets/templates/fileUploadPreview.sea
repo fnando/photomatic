@@ -1,5 +1,5 @@
 <p class="text-center mb-0">
-  <span class="photo-wrapper">
+  <span class="preview-wrapper">
     {if previewStatus | hasNoPreview}
       <svg class="text-blue-100 inline-block icon icon--photo">
         <use href="#icon--photo" role="presentational"></use>

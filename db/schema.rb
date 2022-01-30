@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 2021_12_29_022632) do
     t.text "city", default: "", null: false
     t.text "camera", default: "", null: false
     t.boolean "show_location", default: true, null: false
+    t.jsonb "keywords", default: [], null: false
     t.enum "orientation", null: false, enum_type: "post_orientation"
     t.enum "visibility", default: "private", null: false, enum_type: "post_visibility"
     t.jsonb "meta", default: {}, null: false
@@ -78,6 +79,8 @@ ActiveRecord::Schema.define(version: 2021_12_29_022632) do
   end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.text "display_name", null: false
+    t.text "bio", default: "", null: false
     t.citext "username", null: false
     t.binary "encrypted_email", null: false
     t.text "email_digest", null: false

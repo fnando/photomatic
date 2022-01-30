@@ -9,6 +9,8 @@
 @import "./file_upload.css";
 @import "./chars_counter.css";
 @import "./avatar.css";
+@import "./posts_show.css";
+@import "./menu.css";
 
 @tailwind base;
 @tailwind components;

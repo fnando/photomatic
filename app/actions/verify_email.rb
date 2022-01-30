@@ -17,6 +17,7 @@ class VerifyEmail
     user = User.find_or_create_by!(
       email_digest: User.keyring.digest(email)
     ) do |record|
+      record.display_name = ""
       record.email = email
     end
 
