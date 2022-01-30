@@ -9,6 +9,7 @@ watchman trigger-del "$root" svg_sprite
 watchman trigger-del "$root" seagull
 watchman trigger-del "$root" css
 watchman trigger-del "$root" i18n
+watchman trigger-del "$root" routes
 
 watchman -j <<-JSON
 [
@@ -111,6 +112,28 @@ watchman -j <<-JSON
       ["match", "config/i18n.yml", "wholename"]
     ],
     "command": ["i18n", "export"]
+  }
+]
+JSON
+
+watchman -j <<-JSON
+[
+  "trigger",
+  "$root",
+  {
+    "name": "routes",
+    "expression": [
+      "anyof",
+      ["match", "config/routes.rb", "wholename"]
+    ],
+    "command": [
+      "bundle",
+      "exec",
+      "enroute",
+      "export",
+      "--output",
+      "./app/assets/scripts/config/routes.ts"
+    ]
   }
 ]
 JSON

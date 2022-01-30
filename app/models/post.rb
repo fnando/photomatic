@@ -2,6 +2,7 @@
 
 class Post < ApplicationRecord
   belongs_to :user
+  has_many :likes, dependent: :restrict_with_exception
 
   has_one_attached :raw_photo
   has_one_attached :thumbnail

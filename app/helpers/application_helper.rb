@@ -36,4 +36,17 @@ module ApplicationHelper
   def page_id
     [controller.controller_name, controller.action_name].join("-")
   end
+
+  def like_button(post)
+    data = {
+      controller: "like-button",
+      action: "click->like-button#handleClick",
+      liked: false, # post.liked_by?(current_user),
+      post_id: post.id
+    }
+
+    content_tag :button, type: "button", data: data do
+      icon(:heart_outline) + icon(:heart)
+    end
+  end
 end

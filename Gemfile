@@ -187,6 +187,10 @@ group :development, :test do
 end
 
 group :development do
+  # Export Rails routes to TypeScript definitions
+  # [https://github.com/fnando/enroute]
+  gem "enroute"
+
   # Automatic Ruby code style checking tool.
   # [https://github.com/rubocop/rubocop]
   gem "rubocop"

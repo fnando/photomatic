@@ -40,6 +40,16 @@ svg_sprite generate --input app/assets/images/icons --sprite-path app/assets/ima
   height: 16;
 }
 
+.icon--heart {
+  width: 16px;
+  height: 16px;
+}
+
+.icon--heart_outline {
+  width: 16px;
+  height: 16px;
+}
+
 .icon--info {
   width: 16;
   height: 16;
