@@ -100,7 +100,7 @@ GEM
       aws-sigv4 (~> 1.4)
     aws-sigv4 (1.4.0)
       aws-eventstream (~> 1, >= 1.0.2)
-    brakeman (5.2.0)
+    brakeman (5.2.1)
     browser (5.3.1)
     builder (3.2.4)
     burgundy (1.0.0)
