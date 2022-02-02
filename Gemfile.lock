@@ -85,7 +85,7 @@ GEM
     attr_keyring (0.6.1)
     awesome_print (1.9.2)
     aws-eventstream (1.2.0)
-    aws-partitions (1.549.0)
+    aws-partitions (1.551.0)
     aws-sdk-core (3.125.5)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.525.0)
@@ -128,23 +128,23 @@ GEM
     digest (3.1.0)
     dotenv (2.7.6)
     email-provider-info (0.0.1)
-    email_data (1641689574.0.0)
+    email_data (1643503752.0.0)
     erubi (1.10.0)
     factory_bot (6.2.0)
       activesupport (>= 5.0.0)
     factory_bot-preload (0.3.0)
       activerecord
       factory_bot
-    ffi (1.15.4)
+    ffi (1.15.5)
     foreman (0.87.2)
-    glob (0.2.0)
+    glob (0.2.2)
     globalid (1.0.0)
       activesupport (>= 5.0)
     haikunate (0.1.1)
     hashdiff (1.0.1)
     human_routes (0.0.5)
       rails
-    i18n (1.8.11)
+    i18n (1.9.1)
       concurrent-ruby (~> 1.0)
     i18n-js (4.0.0.alpha2)
       glob
@@ -250,7 +250,7 @@ GEM
     rainbow (3.1.1)
     rake (13.0.6)
     redcarpet (3.5.1)
-    redis (4.5.1)
+    redis (4.6.0)
     regexp_parser (2.2.0)
     rexml (3.2.5)
     root_domain (0.1.2)
@@ -344,7 +344,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.5.3)
+    zeitwerk (2.5.4)
 
 PLATFORMS
   arm64-darwin-21
