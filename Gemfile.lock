@@ -256,7 +256,7 @@ GEM
     root_domain (0.1.2)
       email_data
       simpleidn
-    rubocop (1.25.0)
+    rubocop (1.25.1)
       parallel (~> 1.10)
       parser (>= 3.1.0.0)
       rainbow (>= 2.2.2, < 4.0)
