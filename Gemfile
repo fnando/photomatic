@@ -7,7 +7,7 @@ ruby "3.1.0"
 
 # Full-stack web application framework.
 # [https://rubyonrails.org]
-gem "rails", "~> 7.0.0"
+gem "rails", "~> 7.0.2"
 
 # Pg is the Ruby interface to the {PostgreSQL RDBMS}[http://www.postgresql.org/]
 # [https://github.com/ged/ruby-pg]
