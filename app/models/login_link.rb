@@ -6,7 +6,7 @@ class LoginLink
 
     url = Rails.application.routes.url_helpers.verify_email_url(
       code: auth_code.code,
-      email: email
+      email:
     )
 
     SignedURL.call(url, key: Photomatic::Config.signed_url_secret)
@@ -26,7 +26,7 @@ class LoginLink
     code_digest = AuthCode.keyring.digest(params["code"])
 
     auth_code = AuthCode.lock
-                        .find_by(code_digest: code_digest)
+                        .find_by(code_digest:)
 
     return unless auth_code
     return if auth_code.expired?
