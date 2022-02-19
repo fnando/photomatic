@@ -7,9 +7,6 @@ AllCops:
   TargetRailsVersion: 7.0
   NewCops: enable
 
-Metrics:
-  Enabled: false
-
 Style/OpenStructUse:
   Exclude:
     - test/**/*.rb
