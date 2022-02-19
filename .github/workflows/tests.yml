@@ -107,5 +107,5 @@ jobs:
           PGUSER: postgres
         run: |
           bundle exec rubocop
-          bundle exec brakeman
+          # bundle exec brakeman
           yarn lint
