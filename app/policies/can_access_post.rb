@@ -5,8 +5,8 @@ class CanAccessPost
 
   def self.call(user:, post:)
     [
-      post.user_id == user&.id,
-      VISIBLE.include?(post.visibility)
+      post&.user_id == user&.id,
+      VISIBLE.include?(post&.visibility)
     ].any?
   end
 end

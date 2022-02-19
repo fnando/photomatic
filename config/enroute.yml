@@ -1,0 +1,10 @@
+---
+only:
+  - like_post
+
+typings:
+  _default:
+    format: '"html" | "json"'
+
+  like_post:
+    id: string

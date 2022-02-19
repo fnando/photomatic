@@ -129,6 +129,9 @@ GEM
     dotenv (2.7.6)
     email-provider-info (0.0.1)
     email_data (1644713622.0.0)
+    enroute (0.0.3)
+      activesupport
+      thor
     erubi (1.10.0)
     factory_bot (6.2.0)
       activesupport (>= 5.0.0)
@@ -365,6 +368,7 @@ DEPENDENCIES
   defaults
   dotenv
   email-provider-info
+  enroute
   factory_bot
   factory_bot-preload
   foreman

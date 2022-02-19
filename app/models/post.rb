@@ -2,6 +2,7 @@
 
 class Post < ApplicationRecord
   belongs_to :user
+  has_many :likes, dependent: :restrict_with_exception
 
   has_one_attached :raw_photo
   has_one_attached :thumbnail
@@ -21,4 +22,10 @@ class Post < ApplicationRecord
            camera: "",
            orientation: "landscape",
            visibility: "private"
+
+  def liked_by?(user)
+    return unless user
+
+    likes.exists?(user_id: user.id)
+  end
 end

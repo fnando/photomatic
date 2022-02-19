@@ -20,4 +20,7 @@ Rails.application.routes.draw do
     update
     show
   end
+
+  post "posts/:post_id/like" => "likes#create", as: :like_post, format: false
+  delete "posts/:post_id/like" => "likes#delete", format: false
 end

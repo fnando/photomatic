@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_29_022632) do
-
+ActiveRecord::Schema[7.0].define(version: 2022_02_19_213127) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
   enable_extension "pgcrypto"
@@ -61,6 +60,14 @@ ActiveRecord::Schema.define(version: 2021_12_29_022632) do
     t.index ["created_at"], name: "index_auth_codes_on_created_at"
   end
 
+  create_table "likes", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "user_id"
+    t.uuid "post_id", null: false
+    t.timestamptz "created_at", null: false
+    t.index ["post_id"], name: "index_likes_on_post_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "posts", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "user_id", null: false
     t.text "description", default: "", null: false
@@ -69,24 +76,25 @@ ActiveRecord::Schema.define(version: 2021_12_29_022632) do
     t.text "city", default: "", null: false
     t.text "camera", default: "", null: false
     t.boolean "show_location", default: true, null: false
-    t.jsonb "keywords", default: [], null: false
     t.enum "orientation", null: false, enum_type: "post_orientation"
     t.enum "visibility", default: "private", null: false, enum_type: "post_visibility"
     t.jsonb "meta", default: {}, null: false
     t.timestamptz "created_at", null: false
     t.timestamptz "updated_at", null: false
+    t.jsonb "keywords", default: [], null: false
+    t.bigint "likes_count", default: 0, null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
-    t.text "display_name", null: false
-    t.text "bio", default: "", null: false
     t.citext "username", null: false
     t.binary "encrypted_email", null: false
     t.text "email_digest", null: false
     t.bigint "keyring_id", null: false
     t.timestamptz "created_at", null: false
     t.timestamptz "updated_at", null: false
+    t.text "display_name", null: false
+    t.text "bio", default: "", null: false
     t.index ["created_at"], name: "index_users_on_created_at"
     t.index ["email_digest"], name: "index_users_on_email_digest", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
@@ -94,5 +102,7 @@ ActiveRecord::Schema.define(version: 2021_12_29_022632) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "likes", "posts"
+  add_foreign_key "likes", "users"
   add_foreign_key "posts", "users"
 end

@@ -1,0 +1,15 @@
+[data-controller="like-button"][data-liked="false"] > .icon--heart {
+  @apply hidden;
+}
+
+[data-controller="like-button"][data-liked="true"] > .icon--heart_outline {
+  @apply hidden;
+}
+
+[data-controller="like-button"] > .icon--heart_outline {
+  @apply text-slate-500;
+}
+
+[data-controller="like-button"] > .icon--heart {
+  @apply text-pink-600;
+}

@@ -76,5 +76,9 @@
         <%= t(".uploaded", time: time_ago_in_words(@view_object.created_at)) %>
       </time>
     </li>
+
+    <li>
+      <%= like_button(@view_object) %>
+    </li>
   </ul>
 </div>
