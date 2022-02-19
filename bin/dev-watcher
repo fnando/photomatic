@@ -43,22 +43,7 @@ watchman -j <<-JSON
       "anyof",
       ["match", "app/assets/images/icons/**/*.svg", "wholename"]
     ],
-    "command": [
-      "svg_sprite",
-      "generate",
-      "--input",
-      "app/assets/images/icons",
-      "--sprite-path",
-      "app/assets/images/icons.svg",
-      "--css-path",
-      "app/assets/stylesheets/icons.css",
-      "--name",
-      "icon",
-      "--stroke",
-      "current-color",
-      "--fill",
-      "current-color"
-    ]
+    "command": ["bin/generate_sprite"]
   }
 ]
 JSON
