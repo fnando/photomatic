@@ -1,6 +1,6 @@
 import { Controller } from "@hotwired/stimulus";
 
-import { likePostUrl } from "config/routes";
+import { likePost, unlikePost } from "helpers/api";
 
 export class LikeButton extends Controller {
   static targets = ["icon"];
@@ -19,11 +19,14 @@ export class LikeButton extends Controller {
     button.dataset.liked = newState.toString();
 
     try {
-      const method = newState ? "post" : "delete";
-      const result = await fetch(likePostUrl(button.dataset.postId), {
-        method,
-      });
-      console.log(await result.json());
+      const helper = newState ? likePost : unlikePost;
+      // const result = await fetch(likePostUrl(button.dataset.postId), {
+      //   method,
+      // });
+
+      const success = await helper(button.dataset.postId);
+
+      console.log({ success });
     } catch (error) {
       console.log({ error });
     }

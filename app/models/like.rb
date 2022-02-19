@@ -2,5 +2,5 @@
 
 class Like < ApplicationRecord
   belongs_to :user, optional: true
-  belongs_to :post
+  belongs_to :post, counter_cache: true
 end

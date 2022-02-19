@@ -1,7 +1,7 @@
 /* eslint-disable */
 // This file has been automatically generated.
 // Don't edit it manually. Use `enroute export` instead.
-// Last updated on 2022-02-19 20:18:25 UTC
+// Last updated on 2022-02-19 21:18:34 UTC
 
 import { zipObject } from "lodash";
 
@@ -113,8 +113,8 @@ export type RouteHandler = RouteHelper & {
 
 const likePostHandler = buildRoute({
   "name": "likePost",
-  "incomingPattern": "/posts/:id/like",
-  "outgoingPattern": "/posts/:id/like",
+  "incomingPattern": "/posts/:postId/like",
+  "outgoingPattern": "/posts/:post_id/like",
   "method": [
     "get",
     "",
@@ -123,12 +123,12 @@ const likePostHandler = buildRoute({
     "put"
   ],
   "segments": [
-    "id"
+    "post_id"
   ],
   "requiredSegments": [
-    "id"
+    "post_id"
   ]
 });
 
-export const likePostUrl = (id: string): string =>
-  likePostHandler(id);
+export const likePostUrl = (postId: any): string =>
+  likePostHandler(postId);

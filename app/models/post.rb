@@ -22,4 +22,10 @@ class Post < ApplicationRecord
            camera: "",
            orientation: "landscape",
            visibility: "private"
+
+  def liked_by?(user)
+    return unless user
+
+    likes.exists?(user_id: user.id)
+  end
 end

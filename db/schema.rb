@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_30_025152) do
-
+ActiveRecord::Schema[7.0].define(version: 2022_02_19_213127) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
   enable_extension "pgcrypto"
@@ -83,6 +82,7 @@ ActiveRecord::Schema.define(version: 2022_01_30_025152) do
     t.timestamptz "created_at", null: false
     t.timestamptz "updated_at", null: false
     t.jsonb "keywords", default: [], null: false
+    t.bigint "likes_count", default: 0, null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 

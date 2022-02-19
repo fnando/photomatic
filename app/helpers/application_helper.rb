@@ -41,7 +41,7 @@ module ApplicationHelper
     data = {
       controller: "like-button",
       action: "click->like-button#handleClick",
-      liked: false, # post.liked_by?(current_user),
+      liked: post.liked_by?(current_user),
       post_id: post.id
     }
 

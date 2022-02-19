@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   def show
     ViewPost.call(current_user, params[:id]) do |action|
       action.on(:unauthorized) do
-        render :unauthorized, status: :unauthorized
+        render :unauthorized, status: :not_found
       end
 
       action.on(:success) do |post|
