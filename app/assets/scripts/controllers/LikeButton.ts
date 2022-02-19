@@ -1,6 +1,8 @@
 import { Controller } from "@hotwired/stimulus";
 
 import { likePost, unlikePost } from "helpers/api";
+import { trackError } from "helpers/trackError";
+import * as analytics from "helpers/analytics";
 
 export class LikeButton extends Controller {
   static targets = ["icon"];
@@ -15,20 +17,24 @@ export class LikeButton extends Controller {
     const button = this.element as HTMLButtonElement;
     const state = JSON.parse(button.dataset.liked);
     const newState = !state;
+    const { postId } = button.dataset;
+
+    const like = async () => {
+      await likePost(postId);
+      analytics.like(postId);
+    };
+
+    const unlike = async () => {
+      await unlikePost(postId);
+      analytics.unlike(postId);
+    };
 
     button.dataset.liked = newState.toString();
 
     try {
-      const helper = newState ? likePost : unlikePost;
-      // const result = await fetch(likePostUrl(button.dataset.postId), {
-      //   method,
-      // });
-
-      const success = await helper(button.dataset.postId);
-
-      console.log({ success });
+      await (newState ? like() : unlike());
     } catch (error) {
-      console.log({ error });
+      trackError(error);
     }
   }
 
