@@ -14,12 +14,17 @@ class VerifyEmail
   def call
     return emit(:error) unless LoginLink.valid?(signed_url)
 
+    type = :login
+
     user = User.find_or_create_by!(
       email_digest: User.keyring.digest(email)
     ) do |record|
+      type = :signup
       record.display_name = ""
       record.email = email
     end
+
+    Analytics.send(type, user.id)
 
     emit(:success, user)
   end

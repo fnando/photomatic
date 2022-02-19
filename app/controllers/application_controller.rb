@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   before_action :set_global_meta_data
 
   private def set_global_meta_data
-    page_meta.tag :user_id, current_user&.id
+    page_meta.tag :user_id, current_user&.id.to_s
   end
 end

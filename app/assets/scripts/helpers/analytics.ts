@@ -1,8 +1,9 @@
 import { debug } from "helpers/debug";
 
-const user = document
-  .querySelector<HTMLMetaElement>("meta[name=user-id]")
-  .getAttribute("content");
+const user =
+  document
+    .querySelector<HTMLMetaElement>("meta[name=user-id]")
+    ?.getAttribute("content") ?? "";
 
 export function like(post: string) {
   debug("[analytics]", "user likes photo", { user, post });
