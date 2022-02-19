@@ -9,10 +9,6 @@ export class LikeButton extends Controller {
 
   iconTarget: SVGElement;
 
-  connect() {
-    this.render();
-  }
-
   async handleClick() {
     const button = this.element as HTMLButtonElement;
     const state = JSON.parse(button.dataset.liked);
@@ -37,6 +33,4 @@ export class LikeButton extends Controller {
       trackError(error);
     }
   }
-
-  render() {}
 }
