@@ -40,7 +40,7 @@ class LoginController < ApplicationController
       action.on(:success) do |user|
         SimpleAuth::Session.create(
           scope: "user",
-          session: session,
+          session:,
           record: user
         )
 

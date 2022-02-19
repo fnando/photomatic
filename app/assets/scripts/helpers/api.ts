@@ -1,4 +1,5 @@
 import { likePostUrl } from "config/routes";
+import { trackError } from "helpers/trackError";
 
 const csrfToken = (): string =>
   document
@@ -39,7 +40,8 @@ export async function likePost(id: string): Promise<boolean> {
     } else {
       return false;
     }
-  } catch (e) {
+  } catch (error) {
+    trackError(error, { source: "likePost" });
     return false;
   }
 }
@@ -53,7 +55,8 @@ export async function unlikePost(id: string): Promise<boolean> {
     } else {
       return false;
     }
-  } catch (e) {
+  } catch (error) {
+    trackError(error, { source: "unlikePost" });
     return false;
   }
 }

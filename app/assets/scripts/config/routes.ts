@@ -1,7 +1,6 @@
 /* eslint-disable */
 // This file has been automatically generated.
 // Don't edit it manually. Use `enroute export` instead.
-// Last updated on 2022-02-19 21:18:34 UTC
 
 import { zipObject } from "lodash";
 
