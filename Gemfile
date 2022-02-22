@@ -222,8 +222,12 @@ group :test do
   # [https://github.com/teamcapybara/capybara]
   gem "capybara"
 
+  # Display system notifications (dbus, growl and snarl) after running tests.
+  # [https://rubygems.org/gems/test_notifier]
+  gem "test_notifier"
+
   # Some utilities for your Minitest day-to-day usage.
-  # [http://github.com/fnando/minitest-utils]
+  # [https://github.com/fnando/minitest-utils]
   gem "minitest-utils"
 
   # Selenium is a browser automation tool for automated testing of webapps and

@@ -194,6 +194,7 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.1-arm64-darwin)
       racc (~> 1.4)
+    notifier (1.0.0)
     page_meta (1.0.0)
       rails (>= 6.0)
     parallel (1.21.0)
@@ -318,6 +319,8 @@ GEM
       nokogiri
       svg_optimizer
       thor
+    test_notifier (2.0.3)
+      notifier
     thor (1.2.1)
     timeout (0.2.0)
     turbo-rails (1.0.1)
@@ -401,6 +404,7 @@ DEPENDENCIES
   stimulus-rails (>= 0.4.0)
   superconfig
   svg_sprite
+  test_notifier
   turbo-rails (>= 0.7.11)
   url_signature
   validators
