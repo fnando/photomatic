@@ -498,7 +498,7 @@
     "@jest/types" "^27.5.1"
     expect "^27.5.1"
 
-"@jest/reporters@^27.5.1":
+"@jest/reporters@*", "@jest/reporters@^27.5.1":
   version "27.5.1"
   resolved "https://registry.yarnpkg.com/@jest/reporters/-/reporters-27.5.1.tgz#ceda7be96170b03c923c37987b64015812ffec04"
   integrity sha512-cPXh9hWIlVJMQkVk84aIvXuBB4uQQmFqZiacloFuGiP3ah1sbCxCosidXFDfqG8+6fO1oR2dTJTlsOy4VFmUfw==
@@ -538,7 +538,7 @@
     graceful-fs "^4.2.9"
     source-map "^0.6.0"
 
-"@jest/test-result@^27.5.1":
+"@jest/test-result@*", "@jest/test-result@^27.5.1":
   version "27.5.1"
   resolved "https://registry.yarnpkg.com/@jest/test-result/-/test-result-27.5.1.tgz#56a6585fa80f7cdab72b8c5fc2e871d03832f5bb"
   integrity sha512-EW35l2RYFUcUQxFJz5Cv5MTOxlJIQs4I7gxzi2zVU7PJhOwfYq1MdC5nhSmYjX1gmMmLPvB3sIaC+BkcHRBfag==
@@ -600,6 +600,17 @@
     source-map "^0.6.1"
     write-file-atomic "^3.0.0"
 
+"@jest/types@*", "@jest/types@^27.5.1":
+  version "27.5.1"
+  resolved "https://registry.yarnpkg.com/@jest/types/-/types-27.5.1.tgz#3c79ec4a8ba61c170bf937bcf9e98a9df175ec80"
+  integrity sha512-Cx46iJ9QpwQTjIdq5VJu2QTMMs3QlEjI0x1QbBP5W1+nMzyc2XmimiRR/CbX9TO0cPTeUlxWMOu8mslYsJ8DEw==
+  dependencies:
+    "@types/istanbul-lib-coverage" "^2.0.0"
+    "@types/istanbul-reports" "^3.0.0"
+    "@types/node" "*"
+    "@types/yargs" "^16.0.0"
+    chalk "^4.0.0"
+
 "@jest/types@^26.6.2":
   version "26.6.2"
   resolved "https://registry.yarnpkg.com/@jest/types/-/types-26.6.2.tgz#bef5a532030e1d88a2f5a6d933f84e97226ed48e"
@@ -609,17 +620,6 @@
     "@types/istanbul-reports" "^3.0.0"
     "@types/node" "*"
     "@types/yargs" "^15.0.0"
-    chalk "^4.0.0"
-
-"@jest/types@^27.5.1":
-  version "27.5.1"
-  resolved "https://registry.yarnpkg.com/@jest/types/-/types-27.5.1.tgz#3c79ec4a8ba61c170bf937bcf9e98a9df175ec80"
-  integrity sha512-Cx46iJ9QpwQTjIdq5VJu2QTMMs3QlEjI0x1QbBP5W1+nMzyc2XmimiRR/CbX9TO0cPTeUlxWMOu8mslYsJ8DEw==
-  dependencies:
-    "@types/istanbul-lib-coverage" "^2.0.0"
-    "@types/istanbul-reports" "^3.0.0"
-    "@types/node" "*"
-    "@types/yargs" "^16.0.0"
     chalk "^4.0.0"
 
 "@jridgewell/resolve-uri@^3.0.3":
@@ -3152,6 +3152,15 @@ jest-haste-map@^27.5.1:
     walker "^1.0.7"
   optionalDependencies:
     fsevents "^2.3.2"
+
+jest-hud-reporter@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/jest-hud-reporter/-/jest-hud-reporter-0.0.1.tgz#726104715bb4a7af7cc46a74821ef72d12cc331d"
+  integrity sha512-GXRbcFSkjHYkEyklKE7R43uECwJiP6171nEXaswEYTb4N873Qln7DapmUPwFew7h1B2zGbXJcD6w96QPHkJRmQ==
+  dependencies:
+    "@jest/reporters" "*"
+    "@jest/test-result" "*"
+    "@jest/types" "*"
 
 jest-jasmine2@^27.5.1:
   version "27.5.1"

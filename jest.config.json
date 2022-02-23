@@ -1,5 +1,5 @@
 {
-  "reporters": ["default", "<rootDir>/test/frontend/hud.js"],
+  "reporters": ["default", ["jest-hud-reporter", {}]],
   "setupFiles": ["./test/frontend/setup.ts"],
   "moduleDirectories": ["node_modules", "<rootDir>/app/assets/scripts"],
   "modulePathIgnorePatterns": ["vendor/bundle"],
