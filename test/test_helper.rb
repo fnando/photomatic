@@ -5,8 +5,6 @@ require_relative "../config/environment"
 require "rails/test_help"
 require "factory_bot/preload"
 
-Notifier.default_notifier = :hud
-
 module ActiveSupport
   class TestCase
     # Run tests in parallel with specified workers
