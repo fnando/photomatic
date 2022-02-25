@@ -8,4 +8,5 @@ allowed_sites = [
   "https://selenium-release.storage.googleapis.com",
   "https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver"
 ]
+
 WebMock.disable_net_connect!(allow_localhost: true, allow: allowed_sites)
