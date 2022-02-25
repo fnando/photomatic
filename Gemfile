@@ -230,6 +230,10 @@ group :test do
   # [https://github.com/fnando/minitest-utils]
   gem "minitest-utils"
 
+  # Autorun your minitest tests. Supports Rails projects.
+  # [https://github.com/fnando/joi]
+  gem "joi"
+
   # Selenium is a browser automation tool for automated testing of webapps and
   # more
   # [https://selenium.dev]
