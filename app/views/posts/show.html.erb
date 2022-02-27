@@ -2,11 +2,6 @@
   body {
     background: <%= @view_object.meta["colors"]["light"]["bg"] %>;
   }
-
-  /*#photo:before {
-    content: "Loading";
-    color: <%= @view_object.meta["colors"]["light"]["fg"] %>;
-  }*/
 </style>
 
 <div class="photo-wrapper">
@@ -20,7 +15,7 @@
   <%= render "user_info", user: @view_object.user, class: "author" %>
 
   <% if @view_object.has?(:description) %>
-    <div class="text-sm">
+    <div>
       <%= simple_format @view_object.description %>
     </div>
   <% end %>

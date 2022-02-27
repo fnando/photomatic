@@ -5,7 +5,6 @@
          px-7
          py-3
          rounded-lg
-         text-sm
          uppercase
          inline-block;
 }
@@ -33,7 +32,7 @@ input[type="button"][disabled] {
 
 /* Link button  */
 .link-button {
-  @apply font-semibold text-xs p-0 leading-none text-blue-500;
+  @apply font-semibold p-0 leading-none text-blue-500;
 }
 
 .link-button[disabled] {

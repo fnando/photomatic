@@ -1,5 +1,4 @@
 .comment--text {
-  @apply text-sm;
 }
 
 .comment--text p + p {

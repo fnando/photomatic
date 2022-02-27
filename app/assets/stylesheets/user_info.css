@@ -7,7 +7,7 @@
 }
 
 .user-info--name {
-  @apply text-xs font-semibold;
+  @apply font-semibold;
 }
 
 .user-info--username {
