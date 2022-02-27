@@ -33,7 +33,7 @@
   this property, remember to also reflect the change on those elements.
 */
 [data-page-id="posts-show"] .photo-sidebar {
-  @apply bg-white pt-20 pb-36 relative post-sidebar;
+  @apply bg-white pt-20 pb-44 relative post-sidebar;
   height: 100vh;
   overflow: auto;
   flex-shrink: 0;
@@ -52,7 +52,7 @@
 }
 
 [data-page-id="posts-show"] .post-comment-box textarea {
-  @apply resize-none w-full border-none p-0 h-16;
+  @apply resize-none w-full border-none p-0 h-20;
 }
 
 [data-page-id="posts-show"] .post-comment-box textarea:focus {
