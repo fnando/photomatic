@@ -16,7 +16,7 @@
       height: @view_object.photo_height %>
 </div>
 
-<div class="photo-sidebar no-scrollbars">
+<div class="photo-sidebar no-scrollbars" data-controller="comment-box">
   <%= render "user_info", user: @view_object.user, class: "author" %>
 
   <% if @view_object.has?(:description) %>
@@ -73,7 +73,7 @@
     </li>
   </ul>
 
-  <div class="comments">
+  <div class="comments" data-comment-box-target="list">
     <% 10.times do %>
       <div class="comment">
         <%= render "user_info", user: @view_object.user, class: "sm" %>
@@ -91,11 +91,11 @@
   <div class="post-comment-box" data-controller="chars-counter" data-chars-counter-limit="500">
     <div>
       <p>
-        <textarea placeholder="<%= t("simple_form.placeholders.posts.comment") %>" data-chars-counter-target="input"></textarea>
+        <textarea placeholder="<%= t("simple_form.placeholders.posts.comment") %>"  data-comment-box-target="input" data-chars-counter-target="input"></textarea>
       </p>
 
       <p class="mt-0 leading-none relative">
-        <button disabled class="link-button">Post</button>
+        <button data-chars-counter-target="button" data-comment-box-target="button" disabled class="link-button">Post</button>
         <span data-chars-counter-target="count" class="absolute right-0 bottom-0"></span>
       </p>
     </div>

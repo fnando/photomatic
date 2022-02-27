@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_02_19_213127) do
+ActiveRecord::Schema[7.0].define(version: 2022_02_27_031039) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "citext"
   enable_extension "pgcrypto"
@@ -60,11 +60,26 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_19_213127) do
     t.index ["created_at"], name: "index_auth_codes_on_created_at"
   end
 
+  create_table "comments", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "user_id", null: false
+    t.uuid "post_id", null: false
+    t.text "text", null: false
+    t.text "text_digest", null: false
+    t.timestamptz "deleted_at"
+    t.citext "tagged_user_ids", default: [], null: false, array: true
+    t.timestamptz "created_at", null: false
+    t.index ["deleted_at"], name: "index_comments_on_deleted_at"
+    t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["user_id", "post_id", "text_digest"], name: "index_comments_on_user_id_and_post_id_and_text_digest", unique: true
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
   create_table "likes", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "user_id"
     t.uuid "post_id", null: false
     t.timestamptz "created_at", null: false
     t.index ["post_id"], name: "index_likes_on_post_id"
+    t.index ["user_id", "post_id"], name: "index_likes_on_user_id_and_post_id", unique: true
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
@@ -102,6 +117,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_19_213127) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "users"
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
   add_foreign_key "posts", "users"

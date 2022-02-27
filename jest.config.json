@@ -1,9 +1,14 @@
 {
   "reporters": ["default", ["jest-hud-reporter", {}]],
-  "setupFiles": ["./test/frontend/setup.ts"],
-  "moduleDirectories": ["node_modules", "<rootDir>/app/assets/scripts"],
+  "setupFiles": ["<rootDir>/test/frontend/setup.ts"],
+  "moduleDirectories": [
+    "<rootDir>/node_modules",
+    "<rootDir>/app/assets/scripts"
+  ],
   "modulePathIgnorePatterns": ["vendor/bundle"],
+  "moduleFileExtensions": ["ts", "js"],
   "testEnvironment": "jsdom",
+  "testMatch": ["<rootDir>/test/frontend/**/?(*.)(test).ts"],
   "transform": {
     "^.+\\.ts$": ["esbuild-jest", { "sourcemap": true }]
   }
