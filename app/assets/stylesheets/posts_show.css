@@ -20,12 +20,39 @@
   content: "";
 }
 
+/*
+  The sidebar's padding is also used on `.user-info` and
+  `.post-comment-box`. When changing this property, remember
+  to also reflect the change on those elements.
+*/
 [data-page-id="posts-show"] .photo-sidebar {
-  @apply bg-white p-3;
+  @apply bg-white px-3 pt-14 pb-36 relative;
   width: var(--photo-sidebar-width);
   height: 100vh;
   overflow: auto;
   flex-shrink: 0;
+}
+
+[data-page-id="posts-show"] .author {
+  @apply fixed bg-white top-0 p-3 right-0 border-b;
+  width: var(--photo-sidebar-width);
+}
+
+[data-page-id="posts-show"] .post-comment-box {
+  @apply fixed bg-white bottom-0 right-0 p-3;
+  width: var(--photo-sidebar-width);
+}
+
+[data-page-id="posts-show"] .post-comment-box > div {
+  @apply border-2 rounded p-2;
+}
+
+[data-page-id="posts-show"] .post-comment-box textarea {
+  @apply resize-none w-full border-none text-sm p-0 h-16;
+}
+
+[data-page-id="posts-show"] .post-comment-box textarea:focus {
+  box-shadow: none;
 }
 
 [data-page-id="posts-show"] #photo {

@@ -16,17 +16,8 @@
       height: @view_object.photo_height %>
 </div>
 
-<div class="photo-sidebar">
-  <div class="user-info flex flex-row items-center mb-3">
-    <%= gravatar @view_object.user.email %>
-
-    <div class="flex flex-col ml-2">
-      <span class="text-sm font-bold"><%= @view_object.user.display_name %></span>
-      <%= link_to @view_object.user.username,
-                  profile_path(@view_object.user),
-                  class: "text-accent text-sm" %>
-    </div>
-  </div>
+<div class="photo-sidebar no-scrollbars">
+  <%= render "user_info", user: @view_object.user, class: "author" %>
 
   <% if @view_object.has?(:description) %>
     <div class="text-sm">
@@ -81,4 +72,32 @@
       <%= like_button(@view_object) %>
     </li>
   </ul>
+
+  <div class="comments">
+    <% 10.times do %>
+      <div class="comment">
+        <%= render "user_info", user: @view_object.user, class: "sm" %>
+        <div class="comment--text">
+          <%= simple_format "line 1\n\n\nline 2\nhttps://enlarge-your-sausage.spam" %>
+        </div>
+
+        <time datetime="<%= Time.now.iso8601 %>" class="comment--date">
+          <%= time_ago_in_words(3.minutes.from_now) %>
+        </time>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="post-comment-box" data-controller="chars-counter" data-chars-counter-limit="500">
+    <div>
+      <p>
+        <textarea placeholder="<%= t("simple_form.placeholders.posts.comment") %>" data-chars-counter-target="input"></textarea>
+      </p>
+
+      <p class="mt-0 leading-none relative">
+        <button disabled class="link-button">Post</button>
+        <span data-chars-counter-target="count" class="absolute right-0 bottom-0"></span>
+      </p>
+    </div>
+  </div>
 </div>

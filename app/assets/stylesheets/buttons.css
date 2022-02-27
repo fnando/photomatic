@@ -30,3 +30,12 @@ input[type="button"][disabled] {
 .button + .button {
   @apply ml-3;
 }
+
+/* Link button  */
+.link-button {
+  @apply font-semibold text-xs p-0 leading-none text-blue-500;
+}
+
+.link-button[disabled] {
+  @apply bg-transparent text-blue-300;
+}

@@ -1,0 +1,11 @@
+.comment--text {
+  @apply text-sm;
+}
+
+.comment--text p + p {
+  @apply mt-2;
+}
+
+.comment + .comment {
+  @apply mt-10;
+}
