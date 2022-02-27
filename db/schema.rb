@@ -91,25 +91,25 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_27_031039) do
     t.text "city", default: "", null: false
     t.text "camera", default: "", null: false
     t.boolean "show_location", default: true, null: false
+    t.jsonb "keywords", default: [], null: false
     t.enum "orientation", null: false, enum_type: "post_orientation"
     t.enum "visibility", default: "private", null: false, enum_type: "post_visibility"
     t.jsonb "meta", default: {}, null: false
     t.timestamptz "created_at", null: false
     t.timestamptz "updated_at", null: false
-    t.jsonb "keywords", default: [], null: false
     t.bigint "likes_count", default: 0, null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.text "display_name", null: false
+    t.text "bio", default: "", null: false
     t.citext "username", null: false
     t.binary "encrypted_email", null: false
     t.text "email_digest", null: false
     t.bigint "keyring_id", null: false
     t.timestamptz "created_at", null: false
     t.timestamptz "updated_at", null: false
-    t.text "display_name", null: false
-    t.text "bio", default: "", null: false
     t.index ["created_at"], name: "index_users_on_created_at"
     t.index ["email_digest"], name: "index_users_on_email_digest", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
