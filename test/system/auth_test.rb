@@ -31,4 +31,11 @@ class AuthTest < ApplicationSystemTestCase
     assert_selector ".field-error",
                     text: t("activemodel.errors.messages.disposable_domain")
   end
+
+  test "using invalid verification link" do
+    visit verify_email_url
+
+    assert_equal login_path, current_path
+    assert_selector ".flash-message", text: t("flash.login.verify_email.alert")
+  end
 end

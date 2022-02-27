@@ -26,12 +26,6 @@ module ApplicationHelper
               class: "avatar"
   end
 
-  def style(**kwargs)
-    kwargs
-      .map {|key, value| [key.to_s.tr("_", "-"), value].join(": ") }
-      .join("; ")
-  end
-
   def page_id
     [controller.controller_name, controller.action_name].join("-")
   end

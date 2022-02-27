@@ -1,4 +1,5 @@
 {
+  "collectCoverage": true,
   "reporters": ["default", ["jest-hud-reporter", {}]],
   "setupFiles": ["<rootDir>/__tests__/setup.ts"],
   "moduleDirectories": [

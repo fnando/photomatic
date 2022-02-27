@@ -16,6 +16,16 @@ FactoryBot.define do
         content_type: "image/jpeg"
       )
     end
+
+    trait :exif do
+      meta do
+        {
+          exif: Exif.extract_from_file(
+            Rails.root.join("test/fixtures/files/beach.jpg")
+          )
+        }
+      end
+    end
   end
 
   preload do
