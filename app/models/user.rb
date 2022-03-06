@@ -12,6 +12,7 @@ class User < ApplicationRecord
                      }
   has_many :posts, dependent: :restrict_with_exception
   has_many :likes, dependent: :nullify
+  has_many :comments, dependent: :nullify
 
   def to_param
     username

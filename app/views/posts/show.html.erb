@@ -11,7 +11,7 @@
       height: @view_object.photo_height %>
 </div>
 
-<div class="photo-sidebar no-scrollbars" data-controller="comment-box">
+<div class="photo-sidebar no-scrollbars" data-controller="comment-box" data-post-id="<%= @view_object.id %>">
   <%= render "user_info", user: @view_object.user, class: "author" %>
 
   <% if @view_object.has?(:description) %>
@@ -69,17 +69,8 @@
   </ul>
 
   <div class="comments" data-comment-box-target="list">
-    <% 10.times do %>
-      <div class="comment">
-        <%= render "user_info", user: @view_object.user, class: "sm" %>
-        <div class="comment--text">
-          <%= simple_format "line 1\n\n\nline 2\nhttps://enlarge-your-sausage.spam" %>
-        </div>
-
-        <time datetime="<%= Time.now.iso8601 %>" class="comment--date">
-          <%= time_ago_in_words(3.minutes.from_now) %>
-        </time>
-      </div>
+    <% @view_object.comments.each do |comment| %>
+      <%= render comment %>
     <% end %>
   </div>
 
@@ -90,7 +81,7 @@
       </p>
 
       <p class="mt-0 leading-none relative">
-        <button data-chars-counter-target="button" data-comment-box-target="button" disabled class="link-button">Post</button>
+        <button data-chars-counter-target="button" data-comment-box-target="button" disabled class="link-button"><%= t("js.comment_box.post") %></button>
         <span data-chars-counter-target="count" class="absolute right-0 bottom-0"></span>
       </p>
     </div>

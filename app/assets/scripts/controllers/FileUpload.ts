@@ -1,6 +1,6 @@
-import { Controller } from "@hotwired/stimulus";
 import { DirectUploadController } from "@rails/activestorage/src/direct_upload_controller";
 
+import { Base } from "controllers/Base";
 import { i18n } from "config/i18n";
 import { subscribe } from "helpers/subscribe";
 import { render } from "helpers/render";
@@ -15,7 +15,7 @@ function hasNoPreview(status: PreviewStatus): boolean {
   return [PreviewStatus.none, PreviewStatus.noPreview].includes(status);
 }
 
-export class FileUpload extends Controller {
+export class FileUpload extends Base {
   static targets = ["field", "dropZone", "button"];
 
   public subscriptions: (() => void)[] = [];

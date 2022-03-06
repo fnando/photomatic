@@ -28,8 +28,17 @@ FactoryBot.define do
     end
   end
 
+  factory :comment do
+    association :user
+    association :post
+    text { "comment" }
+  end
+
   preload do
     factory(:default) { create(:user) }
     factory(:default) { create(:post, user: users(:default)) }
+    factory(:default) do
+      create(:comment, user: users(:default), post: posts(:default))
+    end
   end
 end

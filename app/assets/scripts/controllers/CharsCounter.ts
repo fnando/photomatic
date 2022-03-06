@@ -1,8 +1,7 @@
-import { Controller } from "@hotwired/stimulus";
-
+import { Base } from "controllers/Base";
 import { subscribe } from "helpers/subscribe";
 
-export class CharsCounter extends Controller {
+export class CharsCounter extends Base {
   static targets = ["count", "input", "button"];
 
   public subscriptions: (() => void)[] = [];
@@ -13,10 +12,7 @@ export class CharsCounter extends Controller {
   buttonTarget: HTMLButtonElement;
 
   connect() {
-    this.limit = parseInt(
-      (this.element as HTMLElement).dataset.charsCounterLimit,
-      10,
-    );
+    this.limit = parseInt(this.element.dataset.charsCounterLimit, 10);
 
     this.subscriptions.push(
       subscribe(this.inputTarget, "input", this.handleInput.bind(this)),
