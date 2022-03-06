@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
       text: params[:text]
     ) do |action|
       action.on(:success) do |comment|
-        render html: ApplicationController.render(comment)
+        render html: ApplicationController.render(CommentPresenter.new(comment))
       end
 
       action.on(:unauthorized) do

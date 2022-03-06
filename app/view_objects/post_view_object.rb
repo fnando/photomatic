@@ -60,6 +60,11 @@ class PostViewObject < Burgundy::Item
     ].compact.join(", ")
   end
 
+  def comments
+    @comments ||= Burgundy::Collection.new(item.comments, CommentPresenter)
+                                      .select(&:visible?)
+  end
+
   def has?(attribute)
     public_send(attribute).present?
   end

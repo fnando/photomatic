@@ -1,4 +1,4 @@
-<div id="comment--<%= comment.id %>" class="comment">
+<div <%= "hidden" unless comment.visible? %> id="comment--<%= comment.id %>" class="comment">
   <%= render "user_info", user: comment.user, class: "sm" %>
 
   <div class="comment--text">

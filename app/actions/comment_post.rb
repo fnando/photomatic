@@ -19,7 +19,11 @@ class CommentPost
   def call
     return emit(:unauthorized) unless can_access_post?(user:, post:)
 
-    comment = post.comments.create!(user:, text:)
+    comment = post.comments.create!(
+      user:,
+      text:,
+      tagged_user_ids: UsernameExtractor.call(text)
+    )
 
     emit(:success, comment)
   end
