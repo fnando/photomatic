@@ -31,7 +31,7 @@
     "jest-hud-reporter": "^0.0.1",
     "lodash": "^4.17.21",
     "node-fetch": "3",
-    "postcss": "^8.4.8",
+    "postcss": "^8.4.12",
     "postcss-cli": "^9.1.0",
     "postcss-import": "^14.0.2",
     "prettier": "^2.5.1",
