@@ -133,7 +133,7 @@ GEM
       activesupport
       thor
     erubi (1.10.0)
-    factory_bot (6.2.0)
+    factory_bot (6.2.1)
       activesupport (>= 5.0.0)
     factory_bot-preload (0.3.0)
       activerecord
