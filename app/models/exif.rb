@@ -19,6 +19,24 @@ class Exif
     focal_length: ["FocalLengthIn35mmFormat"]
   }.freeze
 
+  def self.extract_from_file(path)
+    cmd = [
+      "exiftool",
+      "-json",
+      "-coordFormat",
+      "%+.6f",
+      path
+    ].map {|arg| Shellwords.escape(arg) }.join(" ")
+
+    payload = `#{cmd}`
+
+    if $CHILD_STATUS.exitstatus.nonzero?
+      raise "Unable to extract EXIF: #{payload.chomp}"
+    end
+
+    Exif.call(JSON.parse(payload).first)
+  end
+
   def self.call(payload)
     ATTRIBUTES.each_with_object({}) do |(to, from_choices), buffer|
       from = from_choices.find {|choice| payload[choice] }

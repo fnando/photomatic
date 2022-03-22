@@ -1,10 +1,14 @@
 ---
 only:
   - like_post
+  - post_comments
 
 typings:
   _default:
     format: '"html" | "json"'
 
   like_post:
+    id: string
+
+  post_comments:
     id: string

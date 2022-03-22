@@ -23,14 +23,7 @@ module ApplicationHelper
     email_digest = Digest::MD5.hexdigest(email.to_s)
     image_tag "https://gravatar.com/avatar/#{email_digest}?s=#{size * 2}",
               **kwargs,
-              class: "avatar",
-              style: "width: #{size}px; height: #{size}px;"
-  end
-
-  def style(**kwargs)
-    kwargs
-      .map {|key, value| [key.to_s.tr("_", "-"), value].join(": ") }
-      .join("; ")
+              class: "avatar"
   end
 
   def page_id

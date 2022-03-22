@@ -1,0 +1,10 @@
+.comment--text {
+}
+
+.comment--text p + p {
+  @apply mt-2;
+}
+
+.comment + .comment {
+  @apply mt-10;
+}

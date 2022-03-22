@@ -38,21 +38,7 @@ class ProcessImage
   end
 
   def extract_metadata(raw_path)
-    cmd = [
-      "exiftool",
-      "-json",
-      "-coordFormat",
-      "%+.6f",
-      raw_path
-    ].map {|arg| Shellwords.escape(arg) }.join(" ")
-
-    payload = `#{cmd}`
-
-    if $CHILD_STATUS.exitstatus.nonzero?
-      raise "Unable to extract EXIF: #{payload.chomp}"
-    end
-
-    Exif.call(JSON.parse(payload).first)
+    Exif.extract_from_file(raw_path)
   end
 
   def export_images(raw_path)

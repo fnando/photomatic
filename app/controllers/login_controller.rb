@@ -48,8 +48,7 @@ class LoginController < ApplicationController
       end
 
       action.on(:error) do
-        redirect_to login_path,
-                    alert: i18n.t("flash.login.verify_email.alert")
+        redirect_to login_path, alert: t("flash.login.verify_email.alert")
       end
     end
   end

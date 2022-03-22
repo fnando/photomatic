@@ -39,6 +39,9 @@ en:
       login:
         email: E.g. me@example.com
 
+      posts:
+        comment: Post a comment. Be kind!
+
       post:
         description: Write a caption…
 

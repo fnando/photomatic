@@ -1,16 +1,15 @@
-import { Controller } from "@hotwired/stimulus";
-
+import { Base } from "controllers/Base";
 import { likePost, unlikePost } from "helpers/api";
 import { trackError } from "helpers/trackError";
 import * as analytics from "helpers/analytics";
 
-export class LikeButton extends Controller {
+export class LikeButton extends Base<HTMLButtonElement> {
   static targets = ["icon"];
 
   iconTarget: SVGElement;
 
   async handleClick() {
-    const button = this.element as HTMLButtonElement;
+    const button = this.element;
     const state = JSON.parse(button.dataset.liked);
     const newState = !state;
     const { postId } = button.dataset;

@@ -1,21 +1,18 @@
-import { Controller } from "@hotwired/stimulus";
-
+import { Base } from "controllers/Base";
 import { subscribe } from "helpers/subscribe";
 
-export class CharsCounter extends Controller {
-  static targets = ["count", "input"];
+export class CharsCounter extends Base {
+  static targets = ["count", "input", "button"];
 
   public subscriptions: (() => void)[] = [];
   public limit = 0;
 
   inputTarget: HTMLInputElement;
   countTarget: HTMLSpanElement;
+  buttonTarget: HTMLButtonElement;
 
   connect() {
-    this.limit = parseInt(
-      (this.element as HTMLElement).dataset.charsCounterLimit,
-      10,
-    );
+    this.limit = parseInt(this.element.dataset.charsCounterLimit, 10);
 
     this.subscriptions.push(
       subscribe(this.inputTarget, "input", this.handleInput.bind(this)),
@@ -33,7 +30,8 @@ export class CharsCounter extends Controller {
   }
 
   render() {
-    const availableChars = this.limit - this.inputTarget.value.length;
+    const charsCount = this.inputTarget.value.length;
+    const availableChars = this.limit - charsCount;
     const availablePercentage = availableChars / this.limit;
     let state = "available";
 
@@ -43,6 +41,10 @@ export class CharsCounter extends Controller {
 
     if (availableChars <= 0) {
       state = "error";
+    }
+
+    if (this.buttonTarget) {
+      this.buttonTarget.disabled = state === "error" || charsCount === 0;
     }
 
     this.countTarget.textContent = String(availableChars);

@@ -1,0 +1,13 @@
+<div <%= "hidden" unless comment.visible? %> id="comment--<%= comment.id %>" class="comment">
+  <%= render "user_info", user: comment.user, class: "sm" %>
+
+  <div class="comment--text">
+    <%= simple_format comment.text %>
+  </div>
+
+  <p>
+    <time datetime="<%= comment.created_at.iso8601 %>" class="comment--date">
+      <%= time_ago_in_words(comment.created_at) %>
+    </time>
+  </p>
+</div>

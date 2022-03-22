@@ -1,10 +1,9 @@
-import { Controller } from "@hotwired/stimulus";
-
+import { Base } from "controllers/Base";
 import { subscribe } from "helpers/subscribe";
 
 const closingClass = "menu-closing";
 
-export class Menu extends Controller {
+export class Menu extends Base {
   static targets = ["button", "menu"];
 
   public subscriptions: (() => void)[] = [];

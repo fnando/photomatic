@@ -16,10 +16,29 @@ FactoryBot.define do
         content_type: "image/jpeg"
       )
     end
+
+    trait :exif do
+      meta do
+        {
+          exif: Exif.extract_from_file(
+            Rails.root.join("test/fixtures/files/beach.jpg")
+          )
+        }
+      end
+    end
+  end
+
+  factory :comment do
+    association :user
+    association :post
+    text { "comment" }
   end
 
   preload do
     factory(:default) { create(:user) }
     factory(:default) { create(:post, user: users(:default)) }
+    factory(:default) do
+      create(:comment, user: users(:default), post: posts(:default))
+    end
   end
 end

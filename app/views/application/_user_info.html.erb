@@ -1,0 +1,10 @@
+<div class="user-info <%= local_assigns[:class] %>">
+  <%= gravatar user.email %>
+
+  <div class="user-info--name-group">
+    <span class="user-info--name"><%= user.display_name %></span>
+    <%= link_to user.username,
+                profile_path(user),
+                class: "user-info--username" %>
+  </div>
+</div>
