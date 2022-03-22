@@ -49,7 +49,7 @@ class LoginController < ApplicationController
 
       action.on(:error) do
         redirect_to login_path,
-                    alert: "Your login link is not valid. Please try again."
+                    alert: i18n.t("flash.login.verify_email.alert")
       end
     end
   end

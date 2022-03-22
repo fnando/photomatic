@@ -1,0 +1,6 @@
+---
+en:
+  flash:
+    login:
+      verify_email:
+        alert: "Your login link is not valid. Please try again."
