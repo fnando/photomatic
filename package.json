@@ -23,7 +23,7 @@
     "autoprefixer": "^10.4.2",
     "esbuild": "^0.14.25",
     "esbuild-jest": "^0.5.0",
-    "eslint": "^8.9.0",
+    "eslint": "^8.21.0",
     "formdata-node": "^4.3.2",
     "husky": "^7.0.4",
     "i18n-js": "^4.0.0-alpha.14",
