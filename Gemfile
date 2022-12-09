@@ -222,6 +222,8 @@ group :test do
   # [https://github.com/teamcapybara/capybara]
   gem "capybara"
 
+  gem "simplecov"
+
   # Display system notifications (dbus, growl and snarl) after running tests.
   # [https://rubygems.org/gems/test_notifier]
   gem "test_notifier"

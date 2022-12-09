@@ -1,0 +1,20 @@
+.user-info {
+  @apply flex flex-row items-center mb-3;
+}
+
+.user-info--name-group {
+  @apply flex flex-col ml-2;
+}
+
+.user-info--name {
+  @apply font-semibold;
+}
+
+.user-info--username {
+  @apply text-accent text-xs;
+}
+
+.user-info .avatar {
+  width: 32px;
+  height: 32px;
+}

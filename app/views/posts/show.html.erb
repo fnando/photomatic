@@ -2,11 +2,6 @@
   body {
     background: <%= @view_object.meta["colors"]["light"]["bg"] %>;
   }
-
-  /*#photo:before {
-    content: "Loading";
-    color: <%= @view_object.meta["colors"]["light"]["fg"] %>;
-  }*/
 </style>
 
 <div class="photo-wrapper">
@@ -16,20 +11,11 @@
       height: @view_object.photo_height %>
 </div>
 
-<div class="photo-sidebar">
-  <div class="user-info flex flex-row items-center mb-3">
-    <%= gravatar @view_object.user.email %>
-
-    <div class="flex flex-col ml-2">
-      <span class="text-sm font-bold"><%= @view_object.user.display_name %></span>
-      <%= link_to @view_object.user.username,
-                  profile_path(@view_object.user),
-                  class: "text-accent text-sm" %>
-    </div>
-  </div>
+<div class="photo-sidebar no-scrollbars" data-controller="comment-box" data-post-id="<%= @view_object.id %>">
+  <%= render "user_info", user: @view_object.user, class: "author" %>
 
   <% if @view_object.has?(:description) %>
-    <div class="text-sm">
+    <div>
       <%= simple_format @view_object.description %>
     </div>
   <% end %>
@@ -81,4 +67,23 @@
       <%= like_button(@view_object) %>
     </li>
   </ul>
+
+  <div class="comments" data-comment-box-target="list">
+    <% @view_object.comments.each do |comment| %>
+      <%= render comment %>
+    <% end %>
+  </div>
+
+  <div class="post-comment-box" data-controller="chars-counter" data-chars-counter-limit="500">
+    <div>
+      <p>
+        <textarea placeholder="<%= t("simple_form.placeholders.posts.comment") %>"  data-comment-box-target="input" data-chars-counter-target="input"></textarea>
+      </p>
+
+      <p class="mt-0 leading-none relative">
+        <button data-chars-counter-target="button" data-comment-box-target="button" disabled class="link-button"><%= t("js.comment_box.post") %></button>
+        <span data-chars-counter-target="count" class="absolute right-0 bottom-0"></span>
+      </p>
+    </div>
+  </div>
 </div>

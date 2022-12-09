@@ -14,31 +14,31 @@
 
 <div class="flex flex-col justify-center" style="height: 120px;">
   {when previewStatus="no-preview"}
-    <p class="mt-0 mb-2 mx-auto text-center w-72 text-mute text-sm">
+    <p class="mt-0 mb-2 mx-auto text-center w-72 text-mute">
       {i18n path="js.posts.new.no_preview"}
     </p>
   {/when}
 
   {unless file}
-    <p class="mt-0 mx-auto text-center w-52 font-bold text-accent text-sm">
+    <p class="mt-0 mx-auto text-center w-52 font-bold text-accent">
       {i18n path="js.posts.new.drag_or_select_photo"}
     </p>
 
-    <p class="mt-0 mx-auto text-center w-80 text-mute text-sm">
+    <p class="mt-0 mx-auto text-center w-80 text-mute">
       {i18n path="js.posts.new.photo_requirements"}
     </p>
   {/unless}
 
   {if file}
-    <p class="mt-0 mx-auto text-center w-52 font-bold text-slate-600 text-sm">
+    <p class="mt-0 mx-auto text-center w-52 font-bold text-slate-600">
       {file.name}
     </p>
 
-    <p class="mt-0 mx-auto text-center w-52 text-mute text-sm">
+    <p class="mt-0 mx-auto text-center w-52 text-mute">
       {file.size | fileSizeFormat}
     </p>
 
-    <p class="mt-0 mx-auto text-center w-52 text-sm">
+    <p class="mt-0 mx-auto text-center w-52">
       <button type="button" class="text-orange-600" data-action="click->file-upload#handleRemove">
         <svg class="inline-block icon icon--trash">
           <use href="#icon--trash" role="presentational"></use>
@@ -51,7 +51,7 @@
 
   {if error}
     <p class="text-center">
-      <span class="field-error text-sm">{error}</span>
+      <span class="field-error">{error}</span>
     </p>
   {/if}
 </div>

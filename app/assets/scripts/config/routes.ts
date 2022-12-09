@@ -129,5 +129,27 @@ const likePostHandler = buildRoute({
   ]
 });
 
+const postCommentsHandler = buildRoute({
+  "name": "postComments",
+  "incomingPattern": "/posts/:postId/comments",
+  "outgoingPattern": "/posts/:post_id/comments",
+  "method": [
+    "get",
+    "",
+    "post",
+    "delete",
+    "put"
+  ],
+  "segments": [
+    "post_id"
+  ],
+  "requiredSegments": [
+    "post_id"
+  ]
+});
+
 export const likePostUrl = (postId: any): string =>
   likePostHandler(postId);
+
+export const postCommentsUrl = (postId: any): string =>
+  postCommentsHandler(postId);

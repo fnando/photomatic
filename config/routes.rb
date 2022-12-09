@@ -23,4 +23,8 @@ Rails.application.routes.draw do
 
   post "posts/:post_id/like" => "likes#create", as: :like_post, format: false
   delete "posts/:post_id/like" => "likes#delete", format: false
+
+  post "posts/:post_id/comments" => "comments#create",
+       as: :post_comments,
+       format: false
 end

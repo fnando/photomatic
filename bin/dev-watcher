@@ -109,7 +109,8 @@ watchman -j <<-JSON
     "name": "routes",
     "expression": [
       "anyof",
-      ["match", "config/routes.rb", "wholename"]
+      ["match", "config/routes.rb", "wholename"],
+      ["match", "config/enroute.yml", "wholename"]
     ],
     "command": [
       "bundle",

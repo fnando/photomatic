@@ -1,4 +1,4 @@
-import { likePostUrl } from "config/routes";
+import { postCommentsUrl, likePostUrl } from "config/routes";
 import { trackError } from "helpers/trackError";
 
 const csrfToken = (): string =>
@@ -58,5 +58,27 @@ export async function unlikePost(id: string): Promise<boolean> {
   } catch (error) {
     trackError(error, { source: "unlikePost" });
     return false;
+  }
+}
+
+export async function postComment({
+  id,
+  text,
+}: {
+  id: string;
+  text: string;
+}): Promise<string> {
+  try {
+    const result = await post(postCommentsUrl(id), { text });
+
+    if (result.ok) {
+      const html = await result.text();
+      return html;
+    } else {
+      return "";
+    }
+  } catch (error) {
+    trackError(error, { source: "postComment" });
+    return "";
   }
 }

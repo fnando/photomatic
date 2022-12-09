@@ -1,5 +1,24 @@
 # frozen_string_literal: true
 
+require "simplecov"
+SimpleCov.start do
+  add_filter "/config/"
+  add_filter "/test/"
+  add_filter "/jobs/"
+  add_filter "/db/"
+
+  Dir["./app/*"].each do |dir|
+    next if ["./app/jobs"].include?(dir)
+    next if Dir["#{dir}/**/*.rb"].empty?
+
+    add_group File.basename(dir).titleize, dir[2..-1]
+  end
+
+  add_group "Library", "lib"
+
+  track_files "{app,lib}/**/*.rb"
+end
+
 ENV["RAILS_ENV"] = "test"
 require_relative "../config/environment"
 require "rails/test_help"

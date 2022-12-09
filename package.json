@@ -19,6 +19,7 @@
     "@tailwindcss/forms": "^0.5.0",
     "@tailwindcss/typography": "^0.5.2",
     "@types/jest": "^27.4.1",
+    "@types/lodash": "^4.14.179",
     "@types/rails__activestorage": "^7.0.0",
     "autoprefixer": "^10.4.2",
     "esbuild": "^0.14.25",
